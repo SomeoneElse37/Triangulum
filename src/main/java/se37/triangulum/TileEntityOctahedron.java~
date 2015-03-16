@@ -1,0 +1,24 @@
+package se37.triangulum;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.INetworkManager;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.Packet132TileEntityData;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+
+public class TileEntityOctahedron extends TileEntity {
+
+    public float voltage;
+
+    @Override
+    public void writeToNBT(NBTTagCompound par1) {
+	super.writeToNBT(par1);
+	par1.setFloat("voltage", voltage);
+    }
+
+    @Override
+    public void readFromNBT(NBTTagCompound par1) {
+	super.readFromNBT(par1);
+	this.voltage = par1.getFloat("voltage");
+    }
+}

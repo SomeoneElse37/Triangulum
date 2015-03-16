@@ -1,0 +1,16 @@
+[
+{
+  "modid": "triangulum",
+  "name": "Triangulum",
+  "description": "A Xycraft-inspired tech mod entirely based on triangles and octahedra, because squares and cubes are way too boring.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["Someone_Else_37"],
+  "credits": "Someone_Else_37 for code, the Forge, FML, and MCP guys for making this all possible, Soaryn for inspiration, and numerous random modders for opensourcing their mods so I could learn from them.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,36 @@
+[04:37:52] [main/INFO]: Setting user: Player501
+[04:37:53] [Client thread/INFO]: LWJGL Version: 2.9.1
+[04:37:56] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Triangulum
+[04:37:57] [Sound Library Loader/INFO]: Sound engine started
+[04:37:57] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:37:57] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:37:57] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Triangulum
+[04:37:57] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:37:57] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:37:58] [Sound Library Loader/INFO]: Sound engine started
+[04:38:48] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[04:38:48] [Server thread/INFO]: Generating keypair
+[04:38:48] [Server thread/INFO]: Converting map!
+[04:38:48] [Server thread/INFO]: Scanning folders...
+[04:38:48] [Server thread/INFO]: Total conversion count is 0
+[04:38:49] [Server thread/INFO]: Preparing start region for level 0
+[04:38:50] [Server thread/INFO]: Preparing spawn area: 16%
+[04:38:51] [Server thread/INFO]: Preparing spawn area: 38%
+[04:38:52] [Server thread/INFO]: Preparing spawn area: 62%
+[04:38:53] [Server thread/INFO]: Preparing spawn area: 86%
+[04:38:54] [Server thread/INFO]: Changing view distance to 12, from 10
+[04:38:54] [Server thread/INFO]: Player501[local:E:852d6132] logged in with entity id 126 at (105.5, 57.0, -177.5)
+[04:38:54] [Server thread/INFO]: Player501 joined the game
+[04:39:04] [Server thread/INFO]: Player501 has just earned the achievement [Taking Inventory]
+[04:39:04] [Client thread/INFO]: [CHAT] Player501 has just earned the achievement [Taking Inventory]
+[04:40:26] [Server thread/INFO]: Saving and pausing game...
+[04:40:26] [Server thread/INFO]: Saving chunks for level 'Forge Dev World'/Overworld
+[04:40:26] [Server thread/INFO]: Saving chunks for level 'Forge Dev World'/Nether
+[04:40:26] [Server thread/INFO]: Saving chunks for level 'Forge Dev World'/The End
+[04:40:29] [Server thread/INFO]: Stopping server
+[04:40:29] [Server thread/INFO]: Saving players
+[04:40:29] [Server thread/INFO]: Saving worlds
+[04:40:29] [Server thread/INFO]: Saving chunks for level 'Forge Dev World'/Overworld
+[04:40:29] [Server thread/INFO]: Saving chunks for level 'Forge Dev World'/Nether
+[04:40:29] [Server thread/INFO]: Saving chunks for level 'Forge Dev World'/The End
+[04:40:30] [Client thread/INFO]: Stopping!

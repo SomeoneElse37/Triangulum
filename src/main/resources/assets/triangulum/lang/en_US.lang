@@ -1,0 +1,15 @@
+item.triangleWood.name=Wooden Triangle
+item.triangleIron.name=Iron Triangle
+item.triangleGold.name=Golden Triangle
+item.triangleDiamond.name=Diamond Triangle
+
+item.anglotronWood.name=Wooden Anglotron
+item.anglotronIron.name=Iron Anglotron
+item.anglotronGold.name=Golden Anglotron
+item.anglotronDiamond.name=Diamond Anglotron
+
+tile.octahedronWood.name=Wooden Octahedron
+tile.octahedronIron.name=Iron Octahedron
+tile.octahedronGold.name=Golden Octahedron
+tile.octahedronDiamond.name=Diamond Octahedron
+
