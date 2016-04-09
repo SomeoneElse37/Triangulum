@@ -2,67 +2,84 @@ package se37.triangulum;
 
 import java.util.List;
 import java.util.Random;
+import java.lang.Math;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.util.EnumBlockRenderType;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.math.BlockPos;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class Octahedron extends Block {
+public class Octahedron extends BlockContainer {
 
-    public int capacitance = 1;
-    public int maxVoltage = 1;
-    public String textureName = "";
+	public int capacitance = 1;
+	public int maxVoltage = 1;
 
-    public Octahedron(Material material) {
-	super(material);
-    };
+	public Octahedron(Material material) {
+		super(material);
+	};
 
-    public Octahedron(Material material, String tex, int cap, int volt) {
-	super(material);
-	this.capacitance = cap;
-	this.maxVoltage = volt;
-	this.textureName = tex;
-    };
+	public Octahedron(Material material, int cap, int volt) {
+		super(material);
+		this.capacitance = cap;
+		this.maxVoltage = volt;
 
-    @Override
-    public boolean isOpaqueCube ()
-    {
-        return false;
-    };
+	};
 
-    @Override
-    public void registerBlockIcons (IIconRegister iconRegister)
-    {
-        this.blockIcon = iconRegister.registerIcon(textureName);
-    };
+	@Override
+	public boolean isOpaqueCube(IBlockState state) {
+		return false;
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    /**
-     * A randomly called display update to be able to add particles or other items for display
-     */
-    public void randomDisplayTick (World par1World, int par2, int par3, int par4, Random par5Random)
-    {
-	int meta = par1World.getBlockMetadata(par2, par3, par4);
-	double d0 = (double) ((float) par2 + 0.5F);
-	double d1 = (double) ((float) par3 + 0.5F);
-	double d2 = (double) ((float) par4 + 0.5F);
+	@Override
+	public EnumBlockRenderType getRenderType(IBlockState state) {
+		return EnumBlockRenderType.MODEL;
+	}
 
-	par1World.spawnParticle("smoke", d0, d1, d2, 0.0D, 0.0D, 0.0D);
-	par1World.spawnParticle("flame", d0, d1, d2, 0.0D, 0.0D, 0.0D);
-    };
+	@Override
+	@SideOnly(Side.CLIENT)
+	/**
+	 * A randomly called display update to be able to add particles or other items for display
+	 */
+	public void randomDisplayTick(IBlockState p, World par1World,
+			BlockPos state, Random random) {
+		double dx = state.getX() + 0.5F;
+		double dy = state.getY() + 0.5F;
+		double dz = state.getZ() + 0.5F;
 
-    @Override
-    public TileEntity createTileEntity(World world, int metadata) {
-	return new OctahedronLogic();
-    };
+		for (int i = 0; i < 20; i++) {
+			double angle = 2.0D * Math.PI * random.nextDouble();
+
+			par1World.spawnParticle(EnumParticleTypes.CRIT, dx
+					+ (0.4D * Math.cos(angle)), dy
+					+ (random.nextDouble() * 1.0F),
+					dz + (0.4D * Math.sin(angle)), 0.0D, 0.1D, 0.0D);
+		}
+		;
+
+		for (int i = 0; i < 5; i++) {
+			double angle = 2.0D * Math.PI * random.nextDouble();
+
+			par1World.spawnParticle(EnumParticleTypes.CRIT_MAGIC,
+					dx + (0.4D * Math.cos(angle)), dy
+							+ (random.nextDouble() * 1.0F),
+					dz + (0.4D * Math.sin(angle)), 0.0D, 0.1D, 0.0D);
+		}
+		;
+	};
+
+	@Override
+	public TileEntity createNewTileEntity(World worldIn, int meta) {
+		return new OctahedronLogic();
+	}
+
 }
-
-

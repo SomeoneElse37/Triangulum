@@ -8,6 +8,13 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -18,20 +25,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
-
-import se37.triangulum.packethandling.PacketPipeline;
 
 
 @Mod(modid = Triangulum.MODID, version = Triangulum.VERSION)
@@ -40,7 +33,7 @@ public class Triangulum {
     public static final String MODID = "triangulum";
     public static final String VERSION = "0.0.0";
 
-    public static final PacketPipeline packetPipeline = new PacketPipeline();
+    //public static final PacketPipeline packetPipeline = new PacketPipeline();
 
     public static Item triangleWood;
     public static Item triangleIron;
@@ -59,41 +52,42 @@ public class Triangulum {
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent preInitEvent) {
-	triangleWood = new Triangle().setUnlocalizedName("triangleWood").setTextureName("triangulum:triangleWood");
-	GameRegistry.registerItem(triangleWood, triangleWood.getUnlocalizedName());
-	triangleIron = new Triangle().setUnlocalizedName("triangleIron").setTextureName("triangulum:triangleIron");
-	GameRegistry.registerItem(triangleIron, triangleIron.getUnlocalizedName());
-	triangleGold = new Triangle().setUnlocalizedName("triangleGold").setTextureName("triangulum:triangleGold");
-	GameRegistry.registerItem(triangleGold, triangleGold.getUnlocalizedName());
-	triangleDiamond = new Triangle().setUnlocalizedName("triangleDiamond").setTextureName("triangulum:triangleDiamond");
-	GameRegistry.registerItem(triangleDiamond, triangleDiamond.getUnlocalizedName());
+	triangleWood = new Item().setUnlocalizedName("triangleWood").setCreativeTab(CreativeTabs.tabMisc);
+	GameRegistry.registerItem(triangleWood, "triangle_wood");
+	triangleIron = new Item().setUnlocalizedName("triangleIron").setCreativeTab(CreativeTabs.tabMisc);
+	GameRegistry.registerItem(triangleIron, "triangle_iron");
+	triangleGold = new Item().setUnlocalizedName("triangleGold").setCreativeTab(CreativeTabs.tabMisc);
+	GameRegistry.registerItem(triangleGold, "triangle_gold");
+	triangleDiamond = new Item().setUnlocalizedName("triangleDiamond").setCreativeTab(CreativeTabs.tabMisc);
+	GameRegistry.registerItem(triangleDiamond, "triangle_diamond");
 
-	anglotronWood = new Anglotron(1, 1).setUnlocalizedName("anglotronWood").setTextureName("triangulum:anglotronWood");
-	GameRegistry.registerItem(anglotronWood, anglotronWood.getUnlocalizedName());
-	anglotronIron = new Anglotron(4, 4).setUnlocalizedName("anglotronIron").setTextureName("triangulum:anglotronIron");
-	GameRegistry.registerItem(anglotronIron, anglotronIron.getUnlocalizedName());
-	anglotronGold = new Anglotron(16, 16).setUnlocalizedName("anglotronGold").setTextureName("triangulum:anglotronGold");
-	GameRegistry.registerItem(anglotronGold, anglotronGold.getUnlocalizedName());
-	anglotronDiamond = new Anglotron(64, 64).setUnlocalizedName("anglotronDiamond").setTextureName("triangulum:anglotronDiamond");
-	GameRegistry.registerItem(anglotronDiamond, anglotronDiamond.getUnlocalizedName());
+	anglotronWood = new Anglotron(1, 1).setUnlocalizedName("anglotronWood");
+	GameRegistry.registerItem(anglotronWood, "anglotron_wood");
+	anglotronIron = new Anglotron(4, 4).setUnlocalizedName("anglotronIron");
+	GameRegistry.registerItem(anglotronIron, "anglotron_iron");
+	anglotronGold = new Anglotron(16, 16).setUnlocalizedName("anglotronGold");
+	GameRegistry.registerItem(anglotronGold, "anglotron_gold");
+	anglotronDiamond = new Anglotron(64, 64).setUnlocalizedName("anglotronDiamond");
+	GameRegistry.registerItem(anglotronDiamond, "anglotron_diamond");
 
-	octahedronWood = new Octahedron(Material.wood, "triangulum:octahedronWood", 4, 1).setHardness(2.0F).setBlockName("octahedronWood").setCreativeTab(CreativeTabs.tabBlock);
-	GameRegistry.registerBlock(octahedronWood, "octahedronWood");
-	octahedronIron = new Octahedron(Material.rock, "triangulum:octahedronIron", 16, 4).setHardness(2.0F).setBlockName("octahedronIron").setCreativeTab(CreativeTabs.tabBlock);
-	GameRegistry.registerBlock(octahedronIron, "octahedronIron");
-	octahedronGold = new Octahedron(Material.rock, "triangulum:octahedronGold", 64, 16).setHardness(2.0F).setBlockName("octahedronGold").setCreativeTab(CreativeTabs.tabBlock);
-	GameRegistry.registerBlock(octahedronGold, "octahedronGold");
-	octahedronDiamond = new Octahedron(Material.rock, "triangulum:octahedronDiamond", 256, 64).setHardness(2.0F).setBlockName("octahedronDiamond").setCreativeTab(CreativeTabs.tabBlock);
-	GameRegistry.registerBlock(octahedronDiamond, "octahedronDiamond");
+	octahedronWood = new Octahedron(Material.wood, 4, 1).setHardness(2.0F).setUnlocalizedName("octahedronWood").setCreativeTab(CreativeTabs.tabBlock);
+	GameRegistry.registerBlock(octahedronWood, "octahedron_wood");
+	octahedronIron = new Octahedron(Material.rock, 16, 4).setHardness(2.0F).setUnlocalizedName("octahedronIron").setCreativeTab(CreativeTabs.tabBlock);
+	GameRegistry.registerBlock(octahedronIron, "octahedron_iron");
+	octahedronGold = new Octahedron(Material.rock, 64, 16).setHardness(2.0F).setUnlocalizedName("octahedronGold").setCreativeTab(CreativeTabs.tabBlock);
+	GameRegistry.registerBlock(octahedronGold, "octahedron_gold");
+	octahedronDiamond = new Octahedron(Material.rock, 256, 64).setHardness(2.0F).setUnlocalizedName("octahedronDiamond").setCreativeTab(CreativeTabs.tabBlock);
+	GameRegistry.registerBlock(octahedronDiamond, "octahedron_diamond");
 
 	GameRegistry.registerTileEntity(se37.triangulum.OctahedronLogic.class, "octahedronLogic");
 
     };
 
     @EventHandler
-    public void init(FMLInitializationEvent event) {
-	ItemStack woodTri = new ItemStack(Triangulum.triangleWood);	//For future use, when I add things that use these
-	ItemStack ironTri = new ItemStack(Triangulum.triangleIron);	//in crafting recipes
+	public void init(FMLInitializationEvent event) {
+		// For future use, when I add things that use these in crafting recipes
+	ItemStack woodTri = new ItemStack(Triangulum.triangleWood);	
+	ItemStack ironTri = new ItemStack(Triangulum.triangleIron);	
 	ItemStack goldTri = new ItemStack(Triangulum.triangleGold);
 	ItemStack diamTri = new ItemStack(Triangulum.triangleDiamond);
 
@@ -116,8 +110,11 @@ public class Triangulum {
 	GameRegistry.addRecipe(new ItemStack(Triangulum.octahedronGold, 2), "ttt", "t t", "ttt", 't', goldTri);
 	GameRegistry.addRecipe(new ItemStack(Triangulum.octahedronDiamond, 2), "ttt", "t t", "ttt", 't', diamTri);
     };
+    
 
-    @EventHandler
+    /* //This code removed for now
+     * 
+     * @EventHandler
     public void initialise(FMLInitializationEvent evt) {
 	packetPipeline.initialise();
     };
@@ -126,6 +123,7 @@ public class Triangulum {
     public void postInitialise(FMLPostInitializationEvent evt) {
 	packetPipeline.postInitialise();
     };
+    */
 }
 
 
