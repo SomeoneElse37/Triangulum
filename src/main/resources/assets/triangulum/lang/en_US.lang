@@ -1,15 +1,15 @@
-item.triangleWood.name=Wooden Triangle
-item.triangleIron.name=Iron Triangle
-item.triangleGold.name=Golden Triangle
-item.triangleDiamond.name=Diamond Triangle
+item.triangle_wood.name=Wooden Triangle
+item.triangle_iron.name=Iron Triangle
+item.triangle_gold.name=Golden Triangle
+item.triangle_diamond.name=Diamond Triangle
 
-item.anglotronWood.name=Wooden Anglotron
-item.anglotronIron.name=Iron Anglotron
-item.anglotronGold.name=Golden Anglotron
-item.anglotronDiamond.name=Diamond Anglotron
+item.anglotron_wood.name=Wooden Anglotron
+item.anglotron_iron.name=Iron Anglotron
+item.anglotron_gold.name=Golden Anglotron
+item.anglotron_diamond.name=Diamond Anglotron
 
-tile.octahedronWood.name=Wooden Octahedron
-tile.octahedronIron.name=Iron Octahedron
-tile.octahedronGold.name=Golden Octahedron
-tile.octahedronDiamond.name=Diamond Octahedron
+tile.octahedron_wood.name=Wooden Octahedron
+tile.octahedron_iron.name=Iron Octahedron
+tile.octahedron_gold.name=Golden Octahedron
+tile.octahedron_diamond.name=Diamond Octahedron
 

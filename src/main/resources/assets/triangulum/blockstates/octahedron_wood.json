@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "octahedron_wood_placeholder" }
+        "normal": { "model": "triangulum:octahedron_wood_placeholder" }
     }
 }

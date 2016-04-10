@@ -59,7 +59,7 @@ public class Octahedron extends BlockContainer {
 		for (int i = 0; i < 20; i++) {
 			double angle = 2.0D * Math.PI * random.nextDouble();
 
-			par1World.spawnParticle(EnumParticleTypes.CRIT, dx
+			par1World.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, dx
 					+ (0.4D * Math.cos(angle)), dy
 					+ (random.nextDouble() * 1.0F),
 					dz + (0.4D * Math.sin(angle)), 0.0D, 0.1D, 0.0D);
@@ -69,10 +69,10 @@ public class Octahedron extends BlockContainer {
 		for (int i = 0; i < 5; i++) {
 			double angle = 2.0D * Math.PI * random.nextDouble();
 
-			par1World.spawnParticle(EnumParticleTypes.CRIT_MAGIC,
-					dx + (0.4D * Math.cos(angle)), dy
+			par1World.spawnParticle(EnumParticleTypes.FLAME,
+					dx + (0.2D * Math.cos(angle)), dy
 							+ (random.nextDouble() * 1.0F),
-					dz + (0.4D * Math.sin(angle)), 0.0D, 0.1D, 0.0D);
+					dz + (0.2D * Math.sin(angle)), 0.0D, 0.1D, 0.0D);
 		}
 		;
 	};

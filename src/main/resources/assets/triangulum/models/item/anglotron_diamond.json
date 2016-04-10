@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "items/anglotron_diamond"
+        "layer0": "triangulum:items/anglotronDiamond"
     }
 }
