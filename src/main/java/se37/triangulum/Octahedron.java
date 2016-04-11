@@ -26,13 +26,14 @@ public class Octahedron extends BlockContainer {
 
 	public Octahedron(Material material) {
 		super(material);
+		setCreativeTab(CreativeTabs.tabBlock);
+		setHardness(2.0F);
 	};
 
 	public Octahedron(Material material, int cap, int volt) {
-		super(material);
+		this(material);
 		this.capacitance = cap;
 		this.maxVoltage = volt;
-
 	};
 
 	@Override

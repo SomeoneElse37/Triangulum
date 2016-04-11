@@ -1,5 +1,9 @@
 package se37.triangulum;
 
+import java.util.LinkedList;
+import java.util.List;
+
+import se37.triangulum.proxy.CommonProxy;
 import net.minecraft.init.Blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -12,6 +16,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameData;
@@ -35,101 +41,88 @@ public class Triangulum {
 	public static final String MODID = "triangulum";
 	public static final String VERSION = "0.0.0";
 
-	// public static final PacketPipeline packetPipeline = new PacketPipeline();
+	@Instance(MODID)
+	public static Triangulum instance;
 
-	public static Item triangleWood;
-	public static Item triangleIron;
-	public static Item triangleGold;
-	public static Item triangleDiamond;
+	@SidedProxy(serverSide = "se37.triangulum.proxy.CommonProxy", clientSide = "se37.triangulum.proxy.ClientProxy")
+	public static CommonProxy proxy;
 
-	public static Item anglotronWood;
-	public static Item anglotronIron;
-	public static Item anglotronGold;
-	public static Item anglotronDiamond;
+	private static Item triangleWood;
+	private static Item triangleIron;
+	private static Item triangleGold;
+	private static Item triangleDiamond;
 
-	public static Block octahedronWood;
-	public static Block octahedronIron;
-	public static Block octahedronGold;
-	public static Block octahedronDiamond;
+	private static Item anglotronWood;
+	private static Item anglotronIron;
+	private static Item anglotronGold;
+	private static Item anglotronDiamond;
 
+	private static Block octahedronWood;
+	private static Block octahedronIron;
+	private static Block octahedronGold;
+	private static Block octahedronDiamond;
+	
+	private static List<String> itemNames;
+
+	/**
+	 * Sets the Item's unlocalized name to the given name, registers both with GameRegistry,
+	 * and adds the item's name to the local list of item names.
+	 * @param i the item to register
+	 * @param name the name to give it
+	 * @return the item, for convenience
+	 */
+	private static Item registerItem(Item i, String name) {
+		i.setUnlocalizedName(name);
+		GameRegistry.registerItem(i, name);
+		itemNames.add(name);
+		return i;
+	}
+	
+	/**
+	 * Sets the Block's unlocalized name to the given name, registers both with GameRegistry,
+	 * and adds the name to the local list of item names.
+	 * @param i the item to register
+	 * @param name the name to give it
+	 * @return the item, for convenience
+	 */
+	private static Block registerBlock(Block b, String name) {
+		b.setUnlocalizedName(name);
+		GameRegistry.registerBlock(b, name);
+		itemNames.add(name);
+		return b;
+	}
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent preInitEvent) {
-		triangleWood = new Item().setUnlocalizedName("triangle_wood")
-				.setCreativeTab(CreativeTabs.tabMisc);
-		GameRegistry.registerItem(triangleWood, "triangle_wood");
+		itemNames = new LinkedList<String>();
 		
-		triangleIron = new Item().setUnlocalizedName("triangle_iron")
-				.setCreativeTab(CreativeTabs.tabMisc);
-		GameRegistry.registerItem(triangleIron, "triangle_iron");
-		triangleGold = new Item().setUnlocalizedName("triangle_gold")
-				.setCreativeTab(CreativeTabs.tabMisc);
-		GameRegistry.registerItem(triangleGold, "triangle_gold");
-		triangleDiamond = new Item().setUnlocalizedName("triangle_diamond")
-				.setCreativeTab(CreativeTabs.tabMisc);
-		GameRegistry.registerItem(triangleDiamond, "triangle_diamond");
+		triangleWood = registerItem(new Item().setCreativeTab(CreativeTabs.tabMisc), "triangle_wood");
+		triangleIron = registerItem(new Item().setCreativeTab(CreativeTabs.tabMisc), "triangle_iron");
+		triangleGold = registerItem(new Item().setCreativeTab(CreativeTabs.tabMisc), "triangle_gold");
+		triangleDiamond = registerItem(new Item().setCreativeTab(CreativeTabs.tabMisc), "triangle_diamond");
 
-		anglotronWood = new Anglotron(1, 1).setUnlocalizedName("anglotron_wood");
-		GameRegistry.registerItem(anglotronWood, "anglotron_wood");
-		anglotronIron = new Anglotron(4, 4).setUnlocalizedName("anglotron_iron");
-		GameRegistry.registerItem(anglotronIron, "anglotron_iron");
-		anglotronGold = new Anglotron(16, 16)
-				.setUnlocalizedName("anglotron_gold");
-		GameRegistry.registerItem(anglotronGold, "anglotron_gold");
-		anglotronDiamond = new Anglotron(64, 64)
-				.setUnlocalizedName("anglotron_diamond");
-		GameRegistry.registerItem(anglotronDiamond, "anglotron_diamond");
 
-		octahedronWood = new Octahedron(Material.wood, 4, 1).setHardness(2.0F)
-				.setUnlocalizedName("octahedron_wood")
-				.setCreativeTab(CreativeTabs.tabBlock);
-		GameRegistry.registerBlock(octahedronWood, "octahedron_wood");
-		octahedronIron = new Octahedron(Material.rock, 16, 4).setHardness(2.0F)
-				.setUnlocalizedName("octahedron_iron")
-				.setCreativeTab(CreativeTabs.tabBlock);
-		GameRegistry.registerBlock(octahedronIron, "octahedron_iron");
-		octahedronGold = new Octahedron(Material.rock, 64, 16)
-				.setHardness(2.0F).setUnlocalizedName("octahedron_gold")
-				.setCreativeTab(CreativeTabs.tabBlock);
-		GameRegistry.registerBlock(octahedronGold, "octahedron_gold");
-		octahedronDiamond = new Octahedron(Material.rock, 256, 64)
-				.setHardness(2.0F).setUnlocalizedName("octahedron_diamond")
-				.setCreativeTab(CreativeTabs.tabBlock);
-		GameRegistry.registerBlock(octahedronDiamond, "octahedron_diamond");
+		anglotronWood = registerItem(new Anglotron(1, 1), "anglotron_wood");
+		anglotronIron = registerItem(new Anglotron(4, 4), "anglotron_iron");
+		anglotronGold = registerItem(new Anglotron(16, 16), "anglotron_gold");
+		anglotronDiamond = registerItem(new Anglotron(64, 64), "anglotron_diamond");
+
+		octahedronWood = registerBlock(new Octahedron(Material.wood, 4, 1), "octahedron_wood");
+		octahedronIron = registerBlock(new Octahedron(Material.rock, 16, 4), "octahedron_iron");
+		octahedronGold = registerBlock(new Octahedron(Material.rock, 64, 16), "octahedron_gold");
+		octahedronDiamond = registerBlock(new Octahedron(Material.rock, 256, 64), "octahedron_diamond");
 
 		GameRegistry.registerTileEntity(se37.triangulum.OctahedronLogic.class,
 				"octahedronLogic");
 
 	};
 
-	/**
-	 * Register the named item with the renderer
-	 * @param name internal name of item to register (e.x. "anglotron_wood")
-	 */
-	private void registerItemModel(String name) {
-		Item i = GameRegistry.findItem("triangulum", name);
-		ModelResourceLocation loc = new ModelResourceLocation("triangulum:" + name, "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(i, 0, loc);
-	}
-	
-	
+		
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		// Register item models
-		registerItemModel("triangle_wood");
-		registerItemModel("triangle_iron");
-		registerItemModel("triangle_gold");
-		registerItemModel("triangle_diamond");
-		registerItemModel("anglotron_wood");
-		registerItemModel("anglotron_iron");
-		registerItemModel("anglotron_gold");
-		registerItemModel("anglotron_diamond");
-		registerItemModel("octahedron_wood");
-		registerItemModel("octahedron_iron");
-		registerItemModel("octahedron_gold");
-		registerItemModel("octahedron_diamond");
+		proxy.registerItemModels(itemNames.toArray(new String[itemNames.size()]));
 		
-		
-		// For future use, when I add things that use these in crafting recipes
+		// For use in crafting recipes
 		ItemStack woodTri = new ItemStack(Triangulum.triangleWood);
 		ItemStack ironTri = new ItemStack(Triangulum.triangleIron);
 		ItemStack goldTri = new ItemStack(Triangulum.triangleGold);
