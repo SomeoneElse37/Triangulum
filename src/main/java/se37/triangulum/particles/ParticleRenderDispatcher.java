@@ -10,7 +10,7 @@
  * File Created @ [Jul 2, 2014, 12:12:45 AM (GMT)]
  */
 
-package se37.triangulum;
+package se37.triangulum.particles;
 
 import org.lwjgl.opengl.GL11;
 

@@ -9,7 +9,7 @@
  * File Created @ [? (GMT)]
  */
 
-package se37.triangulum;
+package se37.triangulum.particles;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -29,7 +29,8 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class FXWisp extends EntityFX {
 
-	public static final ResourceLocation particles = new ResourceLocation("triangulum:textures/misc/wispLarge.png");
+	public static final ResourceLocation particles = new ResourceLocation(
+			"triangulum:textures/misc/wispLarge.png");
 
 	public static Queue<FXWisp> queuedRenders = new ArrayDeque();
 	public static Queue<FXWisp> queuedDepthIgnoringRenders = new ArrayDeque();
@@ -42,29 +43,34 @@ public class FXWisp extends EntityFX {
 	float f4;
 	float f5;
 
-	public FXWisp(World world, double d, double d1, double d2,  float size, float red, float green, float blue, boolean distanceLimit, boolean depthTest, float maxAgeMul) {
+	public FXWisp(World world, double d, double d1, double d2, float size,
+			float red, float green, float blue, boolean distanceLimit,
+			boolean depthTest, float maxAgeMul) {
 		super(world, d, d1, d2, 0.0D, 0.0D, 0.0D);
 		particleRed = red;
 		particleGreen = green;
 		particleBlue = blue;
-		particleAlpha = 0.5F; // So MC renders us on the alpha layer, value not actually used
+		particleAlpha = 0.5F; // So MC renders us on the alpha layer, value not
+								// actually used
 		particleGravity = 0;
 		xSpeed = ySpeed = zSpeed = 0;
 		particleScale *= size;
 		moteParticleScale = particleScale;
-		particleMaxAge = (int)(28D / (Math.random() * 0.3D + 0.7D) * maxAgeMul);
+		particleMaxAge = (int) (20 * maxAgeMul);
 		this.depthTest = depthTest;
 
 		moteHalfLife = particleMaxAge / 2;
 		setSize(0.01F, 0.01F);
-		Entity renderentity = FMLClientHandler.instance().getClient().getRenderViewEntity();
+		Entity renderentity = FMLClientHandler.instance().getClient()
+				.getRenderViewEntity();
 
-		if(distanceLimit) {
+		if (distanceLimit) {
 			int visibleDistance = 50;
 			if (!FMLClientHandler.instance().getClient().gameSettings.fancyGraphics)
 				visibleDistance = 25;
 
-			if (renderentity == null || renderentity.getDistance(posX, posY, posZ) > visibleDistance)
+			if (renderentity == null
+					|| renderentity.getDistance(posX, posY, posZ) > visibleDistance)
 				particleMaxAge = 0;
 		}
 
@@ -72,7 +78,7 @@ public class FXWisp extends EntityFX {
 		prevPosY = posY;
 		prevPosZ = posZ;
 	}
-	
+
 	public void setSpeed(double x, double y, double z) {
 		xSpeed = x;
 		ySpeed = y;
@@ -86,17 +92,19 @@ public class FXWisp extends EntityFX {
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 0.75F);
 		Minecraft.getMinecraft().renderEngine.bindTexture(particles);
 
-		if(!queuedRenders.isEmpty()) {
-			tessellator.getBuffer().begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX_COLOR);
-			for(FXWisp wisp : queuedRenders)
+		if (!queuedRenders.isEmpty()) {
+			tessellator.getBuffer().begin(GL11.GL_QUADS,
+					DefaultVertexFormats.POSITION_TEX_COLOR);
+			for (FXWisp wisp : queuedRenders)
 				wisp.renderQueued(tessellator, true);
 			tessellator.draw();
 		}
 
-		if(!queuedDepthIgnoringRenders.isEmpty()) {
+		if (!queuedDepthIgnoringRenders.isEmpty()) {
 			GlStateManager.disableDepth();
-			tessellator.getBuffer().begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX_COLOR);
-			for(FXWisp wisp : queuedDepthIgnoringRenders)
+			tessellator.getBuffer().begin(GL11.GL_QUADS,
+					DefaultVertexFormats.POSITION_TEX_COLOR);
+			for (FXWisp wisp : queuedDepthIgnoringRenders)
 				wisp.renderQueued(tessellator, false);
 			tessellator.draw();
 			GlStateManager.enableDepth();
@@ -107,31 +115,45 @@ public class FXWisp extends EntityFX {
 	}
 
 	private void renderQueued(Tessellator tessellator, boolean depthEnabled) {
-		if(depthEnabled)
+		if (depthEnabled)
 			ParticleRenderDispatcher.wispFxCount++;
-		else ParticleRenderDispatcher.depthIgnoringWispFxCount++;
+		else
+			ParticleRenderDispatcher.depthIgnoringWispFxCount++;
 
 		float agescale = 0;
-		agescale = (float)particleAge / (float) moteHalfLife;
+		agescale = (float) particleAge / (float) moteHalfLife;
 		if (agescale > 1F)
 			agescale = 2 - agescale;
 
 		particleScale = moteParticleScale * agescale;
 
 		float f10 = 0.5F * particleScale;
-		float f11 = (float)(prevPosX + (posX - prevPosX) * f - interpPosX);
-		float f12 = (float)(prevPosY + (posY - prevPosY) * f - interpPosY);
-		float f13 = (float)(prevPosZ + (posZ - prevPosZ) * f - interpPosZ);
+		float f11 = (float) (prevPosX + (posX - prevPosX) * f - interpPosX);
+		float f12 = (float) (prevPosY + (posY - prevPosY) * f - interpPosY);
+		float f13 = (float) (prevPosZ + (posZ - prevPosZ) * f - interpPosZ);
 
 		VertexBuffer buff = tessellator.getBuffer();
-		buff.pos(f11 - f1 * f10 - f4 * f10, f12 - f2 * f10, f13 - f3 * f10 - f5 * f10).tex(0, 1).color(particleRed, particleGreen, particleBlue, 0.5F).endVertex();
-		buff.pos(f11 - f1 * f10 + f4 * f10, f12 + f2 * f10, f13 - f3 * f10 + f5 * f10).tex(1, 1).color(particleRed, particleGreen, particleBlue, 0.5F).endVertex();
-		buff.pos(f11 + f1 * f10 + f4 * f10, f12 + f2 * f10, f13 + f3 * f10 + f5 * f10).tex(1, 0).color(particleRed, particleGreen, particleBlue, 0.5F).endVertex();
-		buff.pos(f11 + f1 * f10 - f4 * f10, f12 - f2 * f10, f13 + f3 * f10 - f5 * f10).tex(0, 0).color(particleRed, particleGreen, particleBlue, 0.5F).endVertex();
+		buff.pos(f11 - f1 * f10 - f4 * f10, f12 - f2 * f10,
+				f13 - f3 * f10 - f5 * f10).tex(0, 1)
+				.color(particleRed, particleGreen, particleBlue, 0.5F)
+				.endVertex();
+		buff.pos(f11 - f1 * f10 + f4 * f10, f12 + f2 * f10,
+				f13 - f3 * f10 + f5 * f10).tex(1, 1)
+				.color(particleRed, particleGreen, particleBlue, 0.5F)
+				.endVertex();
+		buff.pos(f11 + f1 * f10 + f4 * f10, f12 + f2 * f10,
+				f13 + f3 * f10 + f5 * f10).tex(1, 0)
+				.color(particleRed, particleGreen, particleBlue, 0.5F)
+				.endVertex();
+		buff.pos(f11 + f1 * f10 - f4 * f10, f12 - f2 * f10,
+				f13 + f3 * f10 - f5 * f10).tex(0, 0)
+				.color(particleRed, particleGreen, particleBlue, 0.5F)
+				.endVertex();
 	}
 
 	@Override
-	public void renderParticle(VertexBuffer wr, Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+	public void renderParticle(VertexBuffer wr, Entity entity, float f,
+			float f1, float f2, float f3, float f4, float f5) {
 		this.f = f;
 		this.f1 = f1;
 		this.f2 = f2;
@@ -139,9 +161,10 @@ public class FXWisp extends EntityFX {
 		this.f4 = f4;
 		this.f5 = f5;
 
-		if(depthTest)
+		if (depthTest)
 			queuedRenders.add(this);
-		else queuedDepthIgnoringRenders.add(this);
+		else
+			queuedDepthIgnoringRenders.add(this);
 	}
 
 	@Override
@@ -157,9 +180,11 @@ public class FXWisp extends EntityFX {
 		posX += xSpeed;
 		posY += ySpeed;
 		posZ += zSpeed;
-		xSpeed *= 0.98000001907348633D;
-		ySpeed *= 0.98000001907348633D;
-		zSpeed *= 0.98000001907348633D;
+		if (slowdown) {
+			xSpeed *= 0.98000001907348633D;
+			ySpeed *= 0.98000001907348633D;
+			zSpeed *= 0.98000001907348633D;
+		}
 	}
 
 	public void setGravity(float value) {
@@ -171,5 +196,6 @@ public class FXWisp extends EntityFX {
 	float moteParticleScale;
 	int moteHalfLife;
 	public boolean tinkle = false;
+	public boolean slowdown = false;
 	public int blendmode = 1;
 }
