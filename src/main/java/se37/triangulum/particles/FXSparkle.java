@@ -273,7 +273,7 @@ public class FXSparkle extends EntityFX {
 
 	private int multiplier = 2;
 	private boolean shrink = false;
-	private float taperTicks = 5;
+	private float taperTicks = 3;
 	private int particle = 16;
 	private boolean tinkle = false;
 	private boolean slowdown = false;

@@ -88,50 +88,6 @@ public class Octahedron extends BlockContainer {
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	/**
-	 * A randomly called display update to be able to add particles or other items for display
-	 */
-	public void randomDisplayTick(IBlockState p, World world, BlockPos pos,
-			Random random) {
-		double x = pos.getX() + 0.5;
-		double y = pos.getY() + 0.5;
-		double z = pos.getZ() + 0.5;
-
-		float vx = 0.0f;
-		float vy = 0.2f;
-		float vz = 0.0f;
-
-		//spawn n particles in a ring
-		int n = 20;
-		double dAngle = 2.0 * Math.PI / n;
-		double startAngle = 2.0 * Math.PI * random.nextDouble();
-		for (int i = 0; i < n; i++) {
-			Triangulum.proxy.sparkleFX(world,
-					x + 0.4D * Math.cos(startAngle + i * dAngle), y,
-					z + 0.4D * Math.sin(startAngle + i * dAngle), 1.0F, 0.5F,
-					0.0F, vx, vy, vz, 1.0F, 1.0F);
-
-			// par1World.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, dx
-			// + (0.4D * Math.cos(angle)), dy
-			// + (random.nextDouble() * 1.0F),
-			// dz + (0.4D * Math.sin(angle)), 0.0D, 0.1D, 0.0D);
-		}
-		//spawn particle at center of ring
-		Triangulum.proxy.wispFX(world, x, y, z, 1.0F, 0.0F, 0.0F, vx, vy, vz, 0.5F, 1.0F);
-
-	//	for (int i = 0; i < 5; i++) {
-	//		double angle = 2.0D * Math.PI * random.nextDouble();
-
-			// par1World.spawnParticle(EnumParticleTypes.FLAME,
-			// dx + (0.2D * Math.cos(angle)), dy
-			// + (random.nextDouble() * 1.0F),
-			// dz + (0.2D * Math.sin(angle)), 0.0D, 0.1D, 0.0D);
-	//	}
-		
-	}
-
-	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new OctahedronLogic();
 	}

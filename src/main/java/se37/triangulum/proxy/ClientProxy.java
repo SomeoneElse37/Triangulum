@@ -48,7 +48,7 @@ public class ClientProxy extends CommonProxy {
 			return;
 
 		FXSparkle sparkle = new FXSparkle(world, x, y, z, size, r, g, b, m);
-		sparkle.setSpeed(motionx, motiony, motionz);
+		sparkle.setSpeed(motionx / 20, motiony / 20, motionz / 20);	//convert m/s to m/tick
 		Minecraft.getMinecraft().effectRenderer.addEffect(sparkle);
 	}
 
@@ -74,7 +74,7 @@ public class ClientProxy extends CommonProxy {
 
 		FXWisp wisp = new FXWisp(world, x, y, z, size, r, g, b, distanceLimit,
 				depthTest, maxAgeMul);
-		wisp.setSpeed(motionx, motiony, motionz);
+		wisp.setSpeed(motionx / 20, motiony / 20, motionz / 20);	//convert m/s to m/tick
 
 		Minecraft.getMinecraft().effectRenderer.addEffect(wisp);
 	}
