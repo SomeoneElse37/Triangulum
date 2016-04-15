@@ -107,11 +107,11 @@ public class Triangulum {
 		anglotronGold = registerItem(new Anglotron(16, 16), "anglotron_gold");
 		anglotronDiamond = registerItem(new Anglotron(64, 64), "anglotron_diamond");
 
-																//		  c   v   r   i   d
-		octahedronWood = registerBlock(new Octahedron(Material.wood,      4,  1,  8,  2,  8), "octahedron_wood");
-		octahedronIron = registerBlock(new Octahedron(Material.rock,     16,  4,  8,  4, 16), "octahedron_iron");
-		octahedronGold = registerBlock(new Octahedron(Material.rock,     64, 16,  8,  8, 32), "octahedron_gold");
-		octahedronDiamond = registerBlock(new Octahedron(Material.rock, 256, 64,  8, 16, 64), "octahedron_diamond");
+																//		  c   v    r     l   d
+		octahedronWood = registerBlock(new Octahedron(Material.wood,      4,  1, 0.01F,  2,  8), "octahedron_wood");
+		octahedronIron = registerBlock(new Octahedron(Material.rock,     16,  4, 0.01F,  4, 16), "octahedron_iron");
+		octahedronGold = registerBlock(new Octahedron(Material.rock,     64, 16, 0.01F,  8, 32), "octahedron_gold");
+		octahedronDiamond = registerBlock(new Octahedron(Material.rock, 256, 64, 0.01F, 16, 64), "octahedron_diamond");
 
 		GameRegistry.registerTileEntity(se37.triangulum.OctahedronLogic.class,
 				"octahedronLogic");

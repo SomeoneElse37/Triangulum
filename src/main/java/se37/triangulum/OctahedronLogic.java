@@ -12,15 +12,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class OctahedronLogic extends TileEntity implements ITickable {
-
-	public OctahedronLogic() {
-		voltage = 0;
-		connections = new int[EnumFacing.VALUES.length];
-		currents = new float[EnumFacing.VALUES.length];
-		loadedDirs = new boolean[EnumFacing.HORIZONTALS.length];
-	}
 
 	/** The voltage across the leads of this capacitor. */
 	private float voltage;
@@ -39,9 +33,36 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 	 * The directions in which this octahedron connects to octahedra in loaded
 	 * chunks, in S-W-N-E order. Current calculations are to be skipped in
 	 * directions there this is false. Undefined in directions where a
-	 * connection is nonexistant.
+	 * connection is nonexistent.
 	 */
 	private boolean[] loadedDirs;
+
+	public OctahedronLogic() {
+		voltage = 0;
+		connections = new int[EnumFacing.VALUES.length];
+		currents = new float[EnumFacing.VALUES.length];
+		loadedDirs = new boolean[EnumFacing.HORIZONTALS.length];
+	}
+
+	public float getVoltage() {
+		return voltage;
+	}
+
+	public void setVoltage(float v) {
+		voltage = v;
+	}
+
+	public float getCurrent(EnumFacing e) {
+		return currents[e.getIndex()];
+	}
+
+	public void setCurrent(EnumFacing e, float i) {
+		currents[e.getIndex()] = i;
+	}
+
+	public int getDistance(EnumFacing e) {
+		return connections[e.getIndex()];
+	}
 
 	@Override
 	public void writeToNBT(NBTTagCompound root) {
@@ -183,46 +204,160 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 					continue;
 				}
 
+				dirtied |= updatePower(e, o,
+						pos.offset(e, connections[e.getIndex()]));
+
 				double x = pos.getX() + 0.5;
 				double y = pos.getY() + 0.5;
 				double z = pos.getZ() + 0.5;
 
-				float speed = 4;
-
-				float vx = e.getDirectionVec().getX() * speed;
-				float vy = e.getDirectionVec().getY() * speed;
-				float vz = e.getDirectionVec().getZ() * speed;
-
-				float ageMul = connections[e.getIndex()] / speed;
-
-				// spawn n particles in a ring
-				int n = 20;
-				double dAngle = 2.0 * Math.PI / n;
-				double startAngle = 2.0 * Math.PI * Math.random();
-				for (int i = 0; i < n; i++) {
-					double u = Math.cos(startAngle + i * dAngle) * 0.4;
-					double v = 0;
-					double w = Math.sin(startAngle + i * dAngle) * 0.4;
-
-					if (e.getAxis() == EnumFacing.Axis.X) {
-						v = u;
-						u = 0;
-					} else if (e.getAxis() == EnumFacing.Axis.Z) {
-						v = w;
-						w = 0;
-					}
-
-					Triangulum.proxy.sparkleFX(worldObj, x + u, y + v, z + w,
-							0.1F, 0.8F, 1.0F, vx, vy, vz, 1.0F, ageMul);
+				if (getCurrent(e) > 0) {
+					spawnSparkleRing(worldObj, x, y, z, 0.1F, 0.8F, 1.0F, e, 4,
+							connections[e.getIndex()], 20, 0.4F, 1.0F, 0.4F,
+							0.0F, 1.0F, 0.5F);
 				}
-				// spawn particle at center of ring
-				Triangulum.proxy.wispFX(worldObj, x, y, z, 0.4F, 0.0F, 1.0F,
-						vx, vy, vz, 0.5F, ageMul);
-
 			}
 		}
+
+		if (Math.abs(voltage) > t.getMaxVoltage()) {
+			// Kaboom! Maybe...
+			Triangulum.proxy.wispFX(worldObj, pos.getX() + 0.5,
+					pos.getY() + 0.5, pos.getZ() + 0.5, 0.2F, 1.0F, 1.0F, 2F,
+					0.25F);
+			voltage = 0;
+			dirtied = true;
+		}
+
 		if (dirtied) {
 			this.markDirty();
 		}
+	}
+
+	private boolean updatePower(EnumFacing e, Octahedron o, BlockPos opos) {
+		OctahedronLogic ol = (OctahedronLogic) worldObj.getTileEntity(opos);
+		Octahedron t = (Octahedron) blockType;
+		boolean dirtied = false;
+
+		int d = connections[e.getIndex()]; // meters
+		float dt = 1 / 40F; // seconds
+
+		float v1 = this.voltage; // volts
+		float c1 = t.getCapacitance(); // farads
+		if (!Float.isFinite(v1)) {
+			v1 = 0;
+		}
+
+		float v2 = ol.getVoltage(); // volts
+		float c2 = o.getCapacitance(); // farads
+		if (!Float.isFinite(v2)) {
+			v2 = 0;
+		}
+
+		float r = d * (t.getResistivity() + o.getResistivity()) / 2; // ohms
+		float l = d * (t.getInductivity() + o.getInductivity()) / 2; // henries
+		float i = (getCurrent(e) - ol.getCurrent(e.getOpposite())) / 2; // amperes
+		if (!Float.isFinite(i)) {
+			i = 0;
+		}
+
+		/**
+		 * The following formulas were derived from these equations: <br>
+		 * V = IR (Ohm's Law) <br>
+		 * V = L dI/dt (Inductor law) <br>
+		 * C = Q / V (Capacitor law) <br>
+		 * Q = int I dt (Capacitor charging law)
+		 */
+
+		float di = (v1 - v2 - i * r) / l;
+		float dv1 = -i / c1;
+		float dv2 = i / c2;
+
+		if (!Float.isFinite(di)) {
+			di = 0;
+		}
+
+		setCurrent(e, i + di);
+		ol.setCurrent(e.getOpposite(), -i - di);
+
+		setVoltage(v1 + dv1 * dt);
+		ol.setVoltage(v2 + dv2 * dt);
+
+		dirtied |= di != 0 || dv1 != 0;
+
+		return dirtied;
+	}
+
+	/**
+	 * Spawns a ring of sparkles at the designated location moving in the given
+	 * direction at the given speed, set to despawn when they've traveled the
+	 * given distance. Also spawns a wisp where the sparkles despawn with its
+	 * own (given) color and size, set to despawn where the sparkles spawned.
+	 * 
+	 * @param world
+	 *            the world to spawn these particles in
+	 * @param x
+	 *            x coordinate of the wisp and the center of the ring
+	 * @param y
+	 *            y coordinate of the wisp and the center of the ring
+	 * @param z
+	 *            z coordinate of the wisp and the center of the ring
+	 * @param r
+	 *            red component of sparkles' color
+	 * @param g
+	 *            green component of sparkles' color
+	 * @param b
+	 *            blue component of sparkles' color
+	 * @param e
+	 *            direction to send particles
+	 * @param speed
+	 *            speed of the particles
+	 * @param dist
+	 *            distance particles should travel before despawning
+	 * @param n
+	 *            number of particles to spawn in the ring
+	 * @param radius
+	 *            radius of the ring
+	 * @param pSize
+	 *            size of the sparkles
+	 * @param wr
+	 *            red component of wisp's color
+	 * @param wg
+	 *            green component of wisp's color
+	 * @param wb
+	 *            blue component of wisp's color
+	 * @param wSize
+	 *            maximum size of the wisp
+	 */
+	private void spawnSparkleRing(World world, double x, double y, double z,
+			float r, float g, float b, EnumFacing e, float speed, float dist,
+			int n, float radius, float pSize, float wr, float wg, float wb,
+			float wSize) {
+		float vx = e.getDirectionVec().getX();
+		float vy = e.getDirectionVec().getY();
+		float vz = e.getDirectionVec().getZ();
+
+		float ageMul = dist / speed;
+
+		double dAngle = 2.0 * Math.PI / n;
+		double startAngle = 2.0 * Math.PI * Math.random();
+		for (int i = 0; i < n; i++) {
+			double u = Math.cos(startAngle + i * dAngle) * radius;
+			double v = 0;
+			double w = Math.sin(startAngle + i * dAngle) * radius;
+
+			if (e.getAxis() == EnumFacing.Axis.X) {
+				v = u;
+				u = 0;
+			} else if (e.getAxis() == EnumFacing.Axis.Z) {
+				v = w;
+				w = 0;
+			}
+
+			Triangulum.proxy.sparkleFX(worldObj, x + u, y + v, z + w, r, g, b,
+					vx * speed, vy * speed, vz * speed, pSize, ageMul);
+		}
+		Triangulum.proxy.wispFX(worldObj, x + vx * dist, y + vy * dist, z + vz
+				* dist, wr, wg, wb, vx * -speed, vy * -speed, vz * -speed,
+				wSize, ageMul);
 	}
 }

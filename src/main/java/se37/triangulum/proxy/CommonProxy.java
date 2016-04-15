@@ -35,12 +35,8 @@ public class CommonProxy {
 		// Proxy override
 	}
 
-	public void wispFX(World world, double x, double y, double z, float r, float g, float b, float size) {
-		wispFX(world, x, y, z, r, g, b, 0.0F, 0.0F, 0.0F, size);
-	}
-
-	public void wispFX(World world, double x, double y, double z, float r, float g, float b, float motionx, float motiony, float motionz, float size) {
-		wispFX(world, x, y, z, r, g, b, motionx, motiony, motionz, size, 1F);
+	public void wispFX(World world, double x, double y, double z, float r, float g, float b, float size, float maxAgeMul) {
+		wispFX(world, x, y, z, r, g, b, 0.0F, 0.0F, 0.0F, size, maxAgeMul);
 	}
 
 	public void wispFX(World world, double x, double y, double z, float r, float g, float b, float motionx, float motiony, float motionz, float size, float maxAgeMul) {
