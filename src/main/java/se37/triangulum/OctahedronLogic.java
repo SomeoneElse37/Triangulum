@@ -8,6 +8,7 @@ import net.minecraft.nbt.NBTTagFloat;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
@@ -15,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class OctahedronLogic extends TileEntity implements ITickable {
-
+	
 	/** The voltage across the leads of this capacitor. */
 	private float voltage;
 	/**
@@ -36,12 +37,14 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 	 * connection is nonexistent.
 	 */
 	private boolean[] loadedDirs;
+	private float nextVoltage;
 
 	public OctahedronLogic() {
 		voltage = 0;
 		connections = new int[EnumFacing.VALUES.length];
 		currents = new float[EnumFacing.VALUES.length];
 		loadedDirs = new boolean[EnumFacing.HORIZONTALS.length];
+		nextVoltage = voltage;
 	}
 
 	public float getVoltage() {
@@ -164,6 +167,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 			// last time
 			if (!connected && connections[e.getIndex()] != 0) {
 				connections[e.getIndex()] = 0;
+				setCurrent(e, 0);
 				dirtied = true;
 			}
 		}
@@ -173,6 +177,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 	@Override
 	public void update() {
 		boolean dirtied = false;
+
 		if ((worldObj.getWorldTime() + pos.getX() + pos.getY() << 2 + pos
 				.getZ() << 4) % (20 * 4) == 0) {
 			dirtied |= scan();
@@ -188,6 +193,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 			// This will probably lead to a crash later on.
 		}
 
+		nextVoltage = voltage;
 		for (EnumFacing e : EnumFacing.VALUES) {
 			if (connections[e.getIndex()] > 0
 					&& (e.getHorizontalIndex() < 0 || loadedDirs[e
@@ -198,7 +204,8 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 						pos.offset(e, connections[e.getIndex()])).getBlock();
 				if (b instanceof Octahedron) {
 					o = (Octahedron) b;
-				} else { // if there was no octahedron at the cached location,
+				} else { // if there was no octahedron at the cached
+							// location,
 							// rescan and skip this iteration
 					dirtied |= scan();
 					continue;
@@ -212,12 +219,31 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 				double z = pos.getZ() + 0.5;
 
 				if (getCurrent(e) > 0) {
-					spawnSparkleRing(worldObj, x, y, z, 0.1F, 0.8F, 1.0F, e, 4,
-							connections[e.getIndex()], 20, 0.4F, 1.0F, 0.4F,
-							0.0F, 1.0F, 0.5F);
+					// color of particles displays voltage:
+					// . -64V ... -16V ... -4V ... 0V ... 4V ... 16V ... 64V
+					// . yellow .. red .. mgnta . blue . cyan . green .
+					// yellow
+					// r . ******************-------_______________--------*
+					// g . *--------________________-------*****************
+					// b . __________-------***************-------__________
+					float red = voltage <= 0 ? normalizeRange(0, -4, voltage)
+							: normalizeRange(16, 64, voltage);
+					float grn = voltage <= 0 ? normalizeRange(-16, -64, voltage)
+							: normalizeRange(0, 4, voltage);
+					float blu = voltage <= 0 ? normalizeRange(-16, -4, voltage)
+							: normalizeRange(16, 4, voltage);
+					// brightness of sparkles displays current
+					float a = Math
+							.min(1, (float) (Math.log1p(getCurrent(e)) / (Math
+									.log(2) * 20)));
+
+					spawnSparkleRing(worldObj, x, y, z, red * a, grn * a, blu
+							* a, e, 4, connections[e.getIndex()], 20, 0.4F,
+							1.0F, blu * a, red * a, grn * a, 0.5F);
 				}
 			}
 		}
+		voltage = nextVoltage;
 
 		if (Math.abs(voltage) > t.getMaxVoltage()) {
 			// Kaboom! Maybe...
@@ -228,9 +254,33 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 			dirtied = true;
 		}
 
+		//dirtied = true;
 		if (dirtied) {
 			this.markDirty();
 		}
+	}
+
+	/**
+	 * Takes the whole number line and squishes it so that the range [min, max]
+	 * maps onto the range [0, 1]. Returns the value of val after this squishing
+	 * has taken place, clamped into the range [0, 1]. Works fine if min > max-
+	 * this just flips the number line around.
+	 * 
+	 * @param min
+	 *            the number that maps to 0
+	 * @param max
+	 *            the number that maps to 1
+	 * @param val
+	 *            the number to apply the mapping to
+	 * @return
+	 */
+	private float normalizeRange(float min, float max, float val) {
+		if ((val > max && max > min) || (val < max && max < min)) {
+			val = max;
+		} else if ((val < min && min < max) || (val > min && min > max)) {
+			val = min;
+		}
+		return (val - min) / (max - min);
 	}
 
 	private boolean updatePower(EnumFacing e, Octahedron o, BlockPos opos) {
@@ -279,7 +329,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 		setCurrent(e, i + di);
 		ol.setCurrent(e.getOpposite(), -i - di);
 
-		setVoltage(v1 + dv1 * dt);
+		nextVoltage += dv1 * dt;
 		ol.setVoltage(v2 + dv2 * dt);
 
 		dirtied |= di != 0 || dv1 != 0;
@@ -360,4 +410,33 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 				* dist, wr, wg, wb, vx * -speed, vy * -speed, vz * -speed,
 				wSize, ageMul);
 	}
+	
+	@Override
+	public Packet getDescriptionPacket() {
+		NBTTagCompound root = new NBTTagCompound();
+		writeToNBT(root);
+		return new SPacketUpdateTileEntity(pos, 0, root);
+	}
+	
+	@Override
+	public void onDataPacket(NetworkManager manager, SPacketUpdateTileEntity packet){
+		readFromNBT(packet.getNbtCompound());
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

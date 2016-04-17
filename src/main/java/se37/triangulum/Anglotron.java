@@ -44,6 +44,11 @@ public class Anglotron extends Item {
 			Octahedron o = (Octahedron) b;
 			OctahedronLogic ol = (OctahedronLogic) world.getTileEntity(pos);
 			if (o.getMaxVoltage() == this.maxVoltage) {
+				if(world.isRemote) {
+					player.addChatComponentMessage(new TextComponentString("--- Serverside Readings ---"));
+				} else {
+					player.addChatComponentMessage(new TextComponentString("--- Clientside Readings ---"));
+				}
 				player.addChatComponentMessage(new TextComponentString(
 						"Voltage: " + ol.getVoltage() + " volts"));
 				player.addChatComponentMessage(new TextComponentString(
@@ -56,6 +61,8 @@ public class Anglotron extends Item {
 				player.addChatComponentMessage(new TextComponentString(
 						"Current: " + ol.getCurrent(facing) + " amperes"));
 				player.addChatComponentMessage(new TextComponentString(
+						"Power Transferred: " + ol.getCurrent(facing) * ol.getVoltage() + " watts"));
+				player.addChatComponentMessage(new TextComponentString(
 						"Power Dissipated: " + ol.getCurrent(facing)
 								* ol.getCurrent(facing) * o.getResistivity()
 								* ol.getDistance(facing) + " watts"));
@@ -66,8 +73,8 @@ public class Anglotron extends Item {
 				return EnumActionResult.SUCCESS;
 			} else {
 				player.addChatComponentMessage(new TextComponentString(
-						"Set voltage to " + maxVoltage));
-				ol.setVoltage(this.maxVoltage);
+						"Set voltage to " + maxVoltage * 4));
+				ol.setVoltage(this.maxVoltage * 4);
 				return EnumActionResult.PASS;
 			}
 		}
