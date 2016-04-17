@@ -1,7 +1,8 @@
 package se37.triangulum.powergen;
 
-import se37.triangulum.Octahedron;
-import se37.triangulum.OctahedronLogic;
+import se37.triangulum.core.MachineBase;
+import se37.triangulum.core.Octahedron;
+import se37.triangulum.core.OctahedronLogic;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.inventory.ISidedInventory;

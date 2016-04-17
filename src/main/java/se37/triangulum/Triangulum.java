@@ -3,6 +3,8 @@ package se37.triangulum;
 import java.util.LinkedList;
 import java.util.List;
 
+import se37.triangulum.core.Anglotron;
+import se37.triangulum.core.Octahedron;
 import se37.triangulum.proxy.CommonProxy;
 import net.minecraft.init.Blocks;
 import net.minecraft.block.Block;
@@ -113,7 +115,7 @@ public class Triangulum {
 		octahedronGold = registerBlock(new Octahedron(Material.rock,     64, 16, 0.002F, 4, 32), "octahedron_gold");
 		octahedronDiamond = registerBlock(new Octahedron(Material.rock, 256, 64, 0.001F, 4, 64), "octahedron_diamond");
 
-		GameRegistry.registerTileEntity(se37.triangulum.OctahedronLogic.class,
+		GameRegistry.registerTileEntity(se37.triangulum.core.OctahedronLogic.class,
 				"octahedronLogic");
 
 		proxy.registerClientHandlers();

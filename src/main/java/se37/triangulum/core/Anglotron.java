@@ -1,4 +1,4 @@
-package se37.triangulum;
+package se37.triangulum.core;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

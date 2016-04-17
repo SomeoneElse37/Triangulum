@@ -1,4 +1,4 @@
-package se37.triangulum;
+package se37.triangulum.core;
 
 import java.util.List;
 import java.util.Random;

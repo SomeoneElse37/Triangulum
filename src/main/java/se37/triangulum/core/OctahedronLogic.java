@@ -1,7 +1,8 @@
-package se37.triangulum;
+package se37.triangulum.core;
 
 import org.apache.logging.log4j.LogManager;
 
+import se37.triangulum.Triangulum;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagFloat;
