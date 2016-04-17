@@ -40,6 +40,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 	private float nextVoltage;
 
 	public OctahedronLogic() {
+		super();
 		voltage = 0;
 		connections = new int[EnumFacing.VALUES.length];
 		currents = new float[EnumFacing.VALUES.length];
@@ -217,6 +218,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 					continue;
 				}
 
+				//updates nextVoltage based on current state
 				dirtied |= updatePower(e, o, ol);
 
 				double x = pos.getX() + 0.5;
@@ -264,17 +266,17 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 		}
 	}
 
-	float redChannel(float voltage) {
+	private float redChannel(float voltage) {
 		return voltage <= 0 ? normalizeRange(0, -4, voltage) : normalizeRange(
 				16, 64, voltage);
 	}
 
-	float greenChannel(float voltage) {
+	private float greenChannel(float voltage) {
 		return voltage <= 0 ? normalizeRange(-16, -64, voltage)
 				: normalizeRange(0, 4, voltage);
 	}
 
-	float blueChannel(float voltage) {
+	private float blueChannel(float voltage) {
 		return voltage <= 0 ? normalizeRange(-16, -4, voltage)
 				: normalizeRange(16, 4, voltage);
 	}
