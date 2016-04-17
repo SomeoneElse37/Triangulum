@@ -16,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class OctahedronLogic extends TileEntity implements ITickable {
-	
+
 	/** The voltage across the leads of this capacitor. */
 	private float voltage;
 	/**
@@ -181,6 +181,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 		if ((worldObj.getWorldTime() + pos.getX() + pos.getY() << 2 + pos
 				.getZ() << 4) % (20 * 4) == 0) {
 			dirtied |= scan();
+			// worldObj.mark
 		}
 
 		Octahedron t = null;
@@ -202,8 +203,13 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 				Octahedron o = null;
 				Block b = worldObj.getBlockState(
 						pos.offset(e, connections[e.getIndex()])).getBlock();
-				if (b instanceof Octahedron) {
+				OctahedronLogic ol = null;
+				TileEntity te = worldObj.getTileEntity(pos.offset(e,
+						connections[e.getIndex()]));
+
+				if (b instanceof Octahedron && te instanceof OctahedronLogic) {
 					o = (Octahedron) b;
+					ol = (OctahedronLogic) te;
 				} else { // if there was no octahedron at the cached
 							// location,
 							// rescan and skip this iteration
@@ -211,8 +217,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 					continue;
 				}
 
-				dirtied |= updatePower(e, o,
-						pos.offset(e, connections[e.getIndex()]));
+				dirtied |= updatePower(e, o, ol);
 
 				double x = pos.getX() + 0.5;
 				double y = pos.getY() + 0.5;
@@ -226,20 +231,19 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 					// r . ******************-------_______________--------*
 					// g . *--------________________-------*****************
 					// b . __________-------***************-------__________
-					float red = voltage <= 0 ? normalizeRange(0, -4, voltage)
-							: normalizeRange(16, 64, voltage);
-					float grn = voltage <= 0 ? normalizeRange(-16, -64, voltage)
-							: normalizeRange(0, 4, voltage);
-					float blu = voltage <= 0 ? normalizeRange(-16, -4, voltage)
-							: normalizeRange(16, 4, voltage);
+					// (code moved to private methods for ease of use)
 					// brightness of sparkles displays current
 					float a = Math
 							.min(1, (float) (Math.log1p(getCurrent(e)) / (Math
 									.log(2) * 20)));
 
-					spawnSparkleRing(worldObj, x, y, z, red * a, grn * a, blu
-							* a, e, 4, connections[e.getIndex()], 20, 0.4F,
-							1.0F, blu * a, red * a, grn * a, 0.5F);
+					spawnSparkleRing(worldObj, x, y, z,
+							redChannel(voltage) * a, greenChannel(voltage) * a,
+							blueChannel(voltage) * a, e, 4,
+							connections[e.getIndex()], 20, 0.4F, 1.0F,
+							redChannel(-ol.getVoltage()) * a,
+							greenChannel(-ol.getVoltage()) * a,
+							blueChannel(-ol.getVoltage()) * a, 0.5F);
 				}
 			}
 		}
@@ -254,10 +258,25 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 			dirtied = true;
 		}
 
-		//dirtied = true;
+		// dirtied = true;
 		if (dirtied) {
 			this.markDirty();
 		}
+	}
+
+	float redChannel(float voltage) {
+		return voltage <= 0 ? normalizeRange(0, -4, voltage) : normalizeRange(
+				16, 64, voltage);
+	}
+
+	float greenChannel(float voltage) {
+		return voltage <= 0 ? normalizeRange(-16, -64, voltage)
+				: normalizeRange(0, 4, voltage);
+	}
+
+	float blueChannel(float voltage) {
+		return voltage <= 0 ? normalizeRange(-16, -4, voltage)
+				: normalizeRange(16, 4, voltage);
 	}
 
 	/**
@@ -276,15 +295,14 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 	 */
 	private float normalizeRange(float min, float max, float val) {
 		if ((val > max && max > min) || (val < max && max < min)) {
-			val = max;
+			return 1;
 		} else if ((val < min && min < max) || (val > min && min > max)) {
-			val = min;
+			return 0;
 		}
 		return (val - min) / (max - min);
 	}
 
-	private boolean updatePower(EnumFacing e, Octahedron o, BlockPos opos) {
-		OctahedronLogic ol = (OctahedronLogic) worldObj.getTileEntity(opos);
+	private boolean updatePower(EnumFacing e, Octahedron o, OctahedronLogic ol) {
 		Octahedron t = (Octahedron) blockType;
 		boolean dirtied = false;
 
@@ -410,33 +428,17 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 				* dist, wr, wg, wb, vx * -speed, vy * -speed, vz * -speed,
 				wSize, ageMul);
 	}
-	
+
 	@Override
 	public Packet getDescriptionPacket() {
 		NBTTagCompound root = new NBTTagCompound();
 		writeToNBT(root);
 		return new SPacketUpdateTileEntity(pos, 0, root);
 	}
-	
+
 	@Override
-	public void onDataPacket(NetworkManager manager, SPacketUpdateTileEntity packet){
+	public void onDataPacket(NetworkManager manager,
+			SPacketUpdateTileEntity packet) {
 		readFromNBT(packet.getNbtCompound());
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

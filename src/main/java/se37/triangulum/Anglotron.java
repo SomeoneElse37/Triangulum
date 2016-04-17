@@ -45,9 +45,9 @@ public class Anglotron extends Item {
 			OctahedronLogic ol = (OctahedronLogic) world.getTileEntity(pos);
 			if (o.getMaxVoltage() == this.maxVoltage) {
 				if(world.isRemote) {
-					player.addChatComponentMessage(new TextComponentString("--- Serverside Readings ---"));
-				} else {
 					player.addChatComponentMessage(new TextComponentString("--- Clientside Readings ---"));
+				} else {
+					player.addChatComponentMessage(new TextComponentString("--- Serverside Readings ---"));
 				}
 				player.addChatComponentMessage(new TextComponentString(
 						"Voltage: " + ol.getVoltage() + " volts"));
