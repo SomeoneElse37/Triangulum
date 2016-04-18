@@ -13,7 +13,7 @@
 :compileApiJava UP-TO-DATE
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
-:sourceMainJava
+:sourceMainJava UP-TO-DATE
 :compileJavawarning: [options] bootstrap class path not set in conjunction with -source 1.6
 Note: /Users/aaron/Games/Minecraft/Modding/Forge1.9-1816/build/sources/main/java/se37/triangulum/Triangulum.java uses or overrides a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
@@ -23,107 +23,107 @@ Note: Recompile with -Xlint:unchecked for details.
 
 :processResources UP-TO-DATE
 :classes
-:jar
+:jar UP-TO-DATE
 :getVersionJson
 :extractNatives SKIPPED
 :extractUserdev UP-TO-DATE
 :getAssetIndex UP-TO-DATE
 :getAssets
-Current status: 1039/1045   99%
+Current status: 929/1045   88%
 :makeStart SKIPPED
 :runClient
-[00:59:46] [main/INFO] [GradleStart]: Extra: []
-[00:59:46] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, /Users/aaron/.gradle/caches/minecraft/assets, --assetIndex, 1.9, --accessToken{REDACTED}, --version, 1.9, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
-[00:59:46] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
-[00:59:46] [main/INFO] [FML]: Forge Mod Loader version 12.16.0.1816 for Minecraft 1.9 loading
-[00:59:46] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_77, running on Mac OS X:x86_64:10.11.4, installed at /Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre
-[00:59:46] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
-[00:59:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
-[00:59:46] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
-[00:59:46] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
-[00:59:46] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[00:59:46] [main/ERROR] [FML]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
-[00:59:46] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
-[00:59:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[00:59:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
-[00:59:46] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
-[00:59:47] [Client thread/INFO]: Setting user: Player410
-[00:59:49] [Client thread/INFO]: LWJGL Version: 2.9.2
-[00:59:50] [Client thread/INFO] [FML]: MinecraftForge v12.16.0.1816 Initialized
-[00:59:50] [Client thread/INFO] [FML]: Replaced 207 ore recipes
-[00:59:50] [Client thread/INFO] [FML]: Found 0 mods from the command line. Injecting into mod discoverer
-[00:59:50] [Client thread/INFO] [FML]: Searching /Users/aaron/Games/Minecraft/Modding/Forge1.9-1816/run/mods for mods
-[00:59:51] [Client thread/INFO] [FML]: Forge Mod Loader has identified 4 mods to load
-[00:59:51] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, triangulum] at CLIENT
-[00:59:51] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, triangulum] at SERVER
-[00:59:51] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Triangulum
-[00:59:51] [Client thread/INFO] [FML]: Processing ObjectHolder annotations
-[00:59:51] [Client thread/INFO] [FML]: Found 418 ObjectHolder annotations
-[00:59:51] [Client thread/INFO] [FML]: Identifying ItemStackHolder annotations
-[00:59:51] [Client thread/INFO] [FML]: Found 0 ItemStackHolder annotations
-[00:59:51] [Client thread/INFO] [FML]: Configured a dormant chunk cache size of 0
-[00:59:51] [Forge Version Check/INFO] [ForgeVersionCheck]: [Forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
-[00:59:51] [Client thread/INFO] [FML]: Applying holder lookups
-[00:59:51] [Client thread/INFO] [FML]: Holder lookups applied
-[00:59:51] [Client thread/INFO] [FML]: Injecting itemstacks
-[00:59:51] [Client thread/INFO] [FML]: Itemstack injection complete
-[00:59:52] [Forge Version Check/INFO] [ForgeVersionCheck]: [Forge] Found status: BETA_OUTDATED Target: 12.16.0.1865
-[00:59:52] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[00:59:53] [Thread-6/INFO]: Initializing LWJGL OpenAL
-[00:59:53] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-2016-04-17 00:59:53.083 java[4795:554249] 00:59:53.083 WARNING:  140: This application, or a library it uses, is using the deprecated Carbon Component Manager for hosting Audio Units. Support for this will be removed in a future release. Also, this makes the host incompatible with version 3 audio units. Please transition to the API's in AudioComponent.h.
-[00:59:53] [Thread-6/INFO]: OpenAL initialized.
-[00:59:53] [Sound Library Loader/INFO]: Sound engine started
-[00:59:54] [Client thread/INFO] [FML]: Max texture size: 16384
-[00:59:54] [Client thread/INFO]: Created: 16x16 textures-atlas
-[00:59:54] [Client thread/INFO] [FML]: Injecting itemstacks
-[00:59:54] [Client thread/INFO] [FML]: Itemstack injection complete
-[00:59:54] [Client thread/INFO] [FML]: Forge Mod Loader has successfully loaded 4 mods
-[00:59:54] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Triangulum
-[00:59:55] [Client thread/INFO]: SoundSystem shutting down...
-[00:59:55] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[00:59:55] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[00:59:55] [Thread-8/INFO]: Initializing LWJGL OpenAL
-[00:59:55] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[00:59:55] [Thread-8/INFO]: OpenAL initialized.
-[00:59:56] [Sound Library Loader/INFO]: Sound engine started
-[00:59:56] [Client thread/INFO] [FML]: Max texture size: 16384
-[00:59:56] [Client thread/INFO]: Created: 1024x512 textures-atlas
-[00:59:59] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[01:00:05] [Server thread/INFO]: Starting integrated minecraft server version 1.9
-[01:00:05] [Server thread/INFO]: Generating keypair
-[01:00:06] [Server thread/INFO] [FML]: Injecting existing block and item data into this server instance
-[01:00:06] [Server thread/INFO] [FML]: Applying holder lookups
-[01:00:06] [Server thread/INFO] [FML]: Holder lookups applied
-[01:00:06] [Server thread/INFO] [FML]: Loading dimension 0 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@43a1b385)
-[01:00:06] [Server thread/INFO] [FML]: Loading dimension 1 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@43a1b385)
-[01:00:06] [Server thread/INFO] [FML]: Loading dimension -1 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@43a1b385)
-[01:00:06] [Server thread/INFO]: Preparing start region for level 0
-[01:00:07] [Server thread/INFO]: Preparing spawn area: 88%
-[01:00:07] [Server thread/INFO]: Changing view distance to 12, from 10
-[01:00:08] [Netty Local Client IO #0/INFO] [FML]: Server protocol version 2
-[01:00:08] [Netty Server IO #1/INFO] [FML]: Client protocol version 2
-[01:00:08] [Netty Server IO #1/INFO] [FML]: Client attempting to join with 4 mods : triangulum@0.0.0,FML@8.0.99.99,Forge@12.16.0.1816,mcp@9.19
-[01:00:08] [Netty Local Client IO #0/INFO] [FML]: [Netty Local Client IO #0] Client side modded connection established
-[01:00:08] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
-[01:00:08] [Server thread/INFO]: Player410[local:E:1c6b8d49] logged in with entity id 143 at (-124.40533612526335, 73.88604767678305, 174.5284430730356)
-[01:00:08] [Server thread/INFO]: Player410 joined the game
-[01:00:09] [Server thread/INFO]: Saving and pausing game...
-[01:00:09] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
-[01:00:09] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
-[01:00:09] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
-[01:00:09] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@74aa5cad[id=63acdfe4-8ecf-374a-878d-bbc28b3cc2c5,name=Player410,properties={},legacy=false]
+[02:06:06] [main/INFO] [GradleStart]: Extra: []
+[02:06:06] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, /Users/aaron/.gradle/caches/minecraft/assets, --assetIndex, 1.9, --accessToken{REDACTED}, --version, 1.9, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[02:06:06] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[02:06:06] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[02:06:06] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[02:06:06] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
+[02:06:06] [main/INFO] [FML]: Forge Mod Loader version 12.16.0.1816 for Minecraft 1.9 loading
+[02:06:06] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_77, running on Mac OS X:x86_64:10.11.4, installed at /Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre
+[02:06:06] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[02:06:06] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[02:06:06] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
+[02:06:06] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[02:06:06] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[02:06:06] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[02:06:06] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[02:06:06] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[02:06:06] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[02:06:06] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[02:06:06] [main/ERROR] [FML]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
+[02:06:06] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
+[02:06:06] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[02:06:06] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[02:06:07] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[02:06:07] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[02:06:07] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[02:06:07] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[02:06:07] [Client thread/INFO]: Setting user: Player641
+[02:06:09] [Client thread/INFO]: LWJGL Version: 2.9.2
+[02:06:10] [Client thread/INFO] [FML]: MinecraftForge v12.16.0.1816 Initialized
+[02:06:10] [Client thread/INFO] [FML]: Replaced 207 ore recipes
+[02:06:10] [Client thread/INFO] [FML]: Found 0 mods from the command line. Injecting into mod discoverer
+[02:06:10] [Client thread/INFO] [FML]: Searching /Users/aaron/Games/Minecraft/Modding/Forge1.9-1816/run/mods for mods
+[02:06:11] [Client thread/INFO] [FML]: Forge Mod Loader has identified 4 mods to load
+[02:06:11] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, triangulum] at CLIENT
+[02:06:11] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, triangulum] at SERVER
+[02:06:11] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Triangulum
+[02:06:11] [Client thread/INFO] [FML]: Processing ObjectHolder annotations
+[02:06:11] [Client thread/INFO] [FML]: Found 418 ObjectHolder annotations
+[02:06:11] [Client thread/INFO] [FML]: Identifying ItemStackHolder annotations
+[02:06:11] [Client thread/INFO] [FML]: Found 0 ItemStackHolder annotations
+[02:06:11] [Client thread/INFO] [FML]: Configured a dormant chunk cache size of 0
+[02:06:11] [Forge Version Check/INFO] [ForgeVersionCheck]: [Forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[02:06:11] [Client thread/INFO] [FML]: Applying holder lookups
+[02:06:11] [Client thread/INFO] [FML]: Holder lookups applied
+[02:06:11] [Client thread/INFO] [FML]: Injecting itemstacks
+[02:06:11] [Client thread/INFO] [FML]: Itemstack injection complete
+[02:06:11] [Forge Version Check/INFO] [ForgeVersionCheck]: [Forge] Found status: BETA_OUTDATED Target: 12.16.0.1865
+[02:06:12] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[02:06:12] [Thread-6/INFO]: Initializing LWJGL OpenAL
+[02:06:12] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+2016-04-18 02:06:12.815 java[7000:834455] 02:06:12.814 WARNING:  140: This application, or a library it uses, is using the deprecated Carbon Component Manager for hosting Audio Units. Support for this will be removed in a future release. Also, this makes the host incompatible with version 3 audio units. Please transition to the API's in AudioComponent.h.
+[02:06:12] [Thread-6/INFO]: OpenAL initialized.
+[02:06:13] [Sound Library Loader/INFO]: Sound engine started
+[02:06:13] [Client thread/INFO] [FML]: Max texture size: 16384
+[02:06:13] [Client thread/INFO]: Created: 16x16 textures-atlas
+[02:06:14] [Client thread/INFO] [FML]: Injecting itemstacks
+[02:06:14] [Client thread/INFO] [FML]: Itemstack injection complete
+[02:06:14] [Client thread/INFO] [FML]: Forge Mod Loader has successfully loaded 4 mods
+[02:06:14] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Triangulum
+[02:06:15] [Client thread/INFO]: SoundSystem shutting down...
+[02:06:15] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[02:06:15] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[02:06:15] [Thread-8/INFO]: Initializing LWJGL OpenAL
+[02:06:15] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[02:06:15] [Thread-8/INFO]: OpenAL initialized.
+[02:06:16] [Sound Library Loader/INFO]: Sound engine started
+[02:06:16] [Client thread/INFO] [FML]: Max texture size: 16384
+[02:06:16] [Client thread/INFO]: Created: 1024x512 textures-atlas
+[02:06:18] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[02:06:21] [Server thread/INFO]: Starting integrated minecraft server version 1.9
+[02:06:21] [Server thread/INFO]: Generating keypair
+[02:06:21] [Server thread/INFO] [FML]: Injecting existing block and item data into this server instance
+[02:06:21] [Server thread/INFO] [FML]: Applying holder lookups
+[02:06:21] [Server thread/INFO] [FML]: Holder lookups applied
+[02:06:22] [Server thread/INFO] [FML]: Loading dimension 0 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@12c19320)
+[02:06:22] [Server thread/INFO] [FML]: Loading dimension 1 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@12c19320)
+[02:06:22] [Server thread/INFO] [FML]: Loading dimension -1 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@12c19320)
+[02:06:22] [Server thread/INFO]: Preparing start region for level 0
+[02:06:23] [Server thread/INFO]: Preparing spawn area: 66%
+[02:06:23] [Server thread/INFO]: Changing view distance to 12, from 10
+[02:06:24] [Netty Local Client IO #0/INFO] [FML]: Server protocol version 2
+[02:06:24] [Netty Server IO #1/INFO] [FML]: Client protocol version 2
+[02:06:24] [Netty Server IO #1/INFO] [FML]: Client attempting to join with 4 mods : triangulum@0.0.0,FML@8.0.99.99,Forge@12.16.0.1816,mcp@9.19
+[02:06:24] [Netty Local Client IO #0/INFO] [FML]: [Netty Local Client IO #0] Client side modded connection established
+[02:06:24] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
+[02:06:24] [Server thread/INFO]: Player641[local:E:e4ed2a55] logged in with entity id 130 at (-146.6405277109071, 65.0, 180.58874090915893)
+[02:06:24] [Server thread/INFO]: Player641 joined the game
+[02:06:25] [Server thread/INFO]: Saving and pausing game...
+[02:06:25] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
+[02:06:25] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
+[02:06:25] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
+[02:06:25] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@39f20d2b[id=34c6f761-a0d4-3d62-b5ee-df15e4530215,name=Player641,properties={},legacy=false]
 com.mojang.authlib.exceptions.AuthenticationException: The client has sent too many requests within a certain amount of time
 	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:65) ~[YggdrasilAuthenticationService.class:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:175) [YggdrasilMinecraftSessionService.class:?]
@@ -145,710 +145,26 @@ com.mojang.authlib.exceptions.AuthenticationException: The client has sent too m
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_77]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_77]
 	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_77]
-[01:00:48] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:00:48] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:01:08] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:01:08] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:02:32] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:32] [Client thread/INFO]: [CHAT] Voltage: 1.1185485 volts
-[01:02:32] [Client thread/INFO]: [CHAT] Charge: 4.474194 coulombs
-[01:02:32] [Client thread/INFO]: [CHAT] Energy in Capacitor: 2.5023015 joules
-[01:02:32] [Client thread/INFO]: [CHAT] Current: -178.8048 amperes
-[01:02:32] [Client thread/INFO]: [CHAT] Power Transferred: -200.00183 watts
-[01:02:32] [Client thread/INFO]: [CHAT] Power Dissipated: 1023.07697 watts
-[01:02:32] [Client thread/INFO]: [CHAT] Energy in Inductor: 255769.23 joules
-[01:02:32] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:32] [Client thread/INFO]: [CHAT] Voltage: 1.1185485 volts
-[01:02:32] [Client thread/INFO]: [CHAT] Charge: 4.474194 coulombs
-[01:02:32] [Client thread/INFO]: [CHAT] Energy in Capacitor: 2.5023015 joules
-[01:02:32] [Client thread/INFO]: [CHAT] Current: -178.8048 amperes
-[01:02:32] [Client thread/INFO]: [CHAT] Power Transferred: -200.00183 watts
-[01:02:32] [Client thread/INFO]: [CHAT] Power Dissipated: 1023.07697 watts
-[01:02:32] [Client thread/INFO]: [CHAT] Energy in Inductor: 255769.23 joules
-[01:02:41] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:41] [Client thread/INFO]: [CHAT] Voltage: 0.43451768 volts
-[01:02:41] [Client thread/INFO]: [CHAT] Charge: 1.7380707 coulombs
-[01:02:41] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.37761122 joules
-[01:02:41] [Client thread/INFO]: [CHAT] Current: -69.19435 amperes
-[01:02:41] [Client thread/INFO]: [CHAT] Power Transferred: -30.06617 watts
-[01:02:41] [Client thread/INFO]: [CHAT] Power Dissipated: 153.21147 watts
-[01:02:41] [Client thread/INFO]: [CHAT] Energy in Inductor: 38302.867 joules
-[01:02:41] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:41] [Client thread/INFO]: [CHAT] Voltage: 0.43451768 volts
-[01:02:41] [Client thread/INFO]: [CHAT] Charge: 1.7380707 coulombs
-[01:02:41] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.37761122 joules
-[01:02:41] [Client thread/INFO]: [CHAT] Current: -69.19435 amperes
-[01:02:41] [Client thread/INFO]: [CHAT] Power Transferred: -30.06617 watts
-[01:02:41] [Client thread/INFO]: [CHAT] Power Dissipated: 153.21147 watts
-[01:02:41] [Client thread/INFO]: [CHAT] Energy in Inductor: 38302.867 joules
-[01:02:42] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:42] [Client thread/INFO]: [CHAT] Voltage: 0.35229385 volts
-[01:02:42] [Client thread/INFO]: [CHAT] Charge: 1.4091754 coulombs
-[01:02:42] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.24822192 joules
-[01:02:42] [Client thread/INFO]: [CHAT] Current: -56.039463 amperes
-[01:02:42] [Client thread/INFO]: [CHAT] Power Transferred: -19.742357 watts
-[01:02:42] [Client thread/INFO]: [CHAT] Power Dissipated: 100.49349 watts
-[01:02:42] [Client thread/INFO]: [CHAT] Energy in Inductor: 25123.371 joules
-[01:02:42] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:42] [Client thread/INFO]: [CHAT] Voltage: 0.35229385 volts
-[01:02:42] [Client thread/INFO]: [CHAT] Charge: 1.4091754 coulombs
-[01:02:42] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.24822192 joules
-[01:02:42] [Client thread/INFO]: [CHAT] Current: -56.039463 amperes
-[01:02:42] [Client thread/INFO]: [CHAT] Power Transferred: -19.742357 watts
-[01:02:42] [Client thread/INFO]: [CHAT] Power Dissipated: 100.49349 watts
-[01:02:42] [Client thread/INFO]: [CHAT] Energy in Inductor: 25123.371 joules
-[01:02:43] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:43] [Client thread/INFO]: [CHAT] Voltage: 0.29866767 volts
-[01:02:43] [Client thread/INFO]: [CHAT] Charge: 1.1946707 coulombs
-[01:02:43] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.17840475 joules
-[01:02:43] [Client thread/INFO]: [CHAT] Current: -47.461273 amperes
-[01:02:43] [Client thread/INFO]: [CHAT] Power Transferred: -14.175148 watts
-[01:02:43] [Client thread/INFO]: [CHAT] Power Dissipated: 72.08232 watts
-[01:02:43] [Client thread/INFO]: [CHAT] Energy in Inductor: 18020.58 joules
-[01:02:43] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:43] [Client thread/INFO]: [CHAT] Voltage: 0.29866767 volts
-[01:02:43] [Client thread/INFO]: [CHAT] Charge: 1.1946707 coulombs
-[01:02:43] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.17840475 joules
-[01:02:43] [Client thread/INFO]: [CHAT] Current: -47.461273 amperes
-[01:02:43] [Client thread/INFO]: [CHAT] Power Transferred: -14.175148 watts
-[01:02:43] [Client thread/INFO]: [CHAT] Power Dissipated: 72.08232 watts
-[01:02:43] [Client thread/INFO]: [CHAT] Energy in Inductor: 18020.58 joules
-[01:02:43] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:43] [Client thread/INFO]: [CHAT] Voltage: 0.24616475 volts
-[01:02:43] [Client thread/INFO]: [CHAT] Charge: 0.984659 coulombs
-[01:02:43] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.12119417 joules
-[01:02:43] [Client thread/INFO]: [CHAT] Current: -39.063843 amperes
-[01:02:43] [Client thread/INFO]: [CHAT] Power Transferred: -9.616141 watts
-[01:02:43] [Client thread/INFO]: [CHAT] Power Dissipated: 48.831482 watts
-[01:02:43] [Client thread/INFO]: [CHAT] Energy in Inductor: 12207.87 joules
-[01:02:43] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:43] [Client thread/INFO]: [CHAT] Voltage: 0.24616475 volts
-[01:02:43] [Client thread/INFO]: [CHAT] Charge: 0.984659 coulombs
-[01:02:43] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.12119417 joules
-[01:02:43] [Client thread/INFO]: [CHAT] Current: -39.063843 amperes
-[01:02:43] [Client thread/INFO]: [CHAT] Power Transferred: -9.616141 watts
-[01:02:43] [Client thread/INFO]: [CHAT] Power Dissipated: 48.831482 watts
-[01:02:43] [Client thread/INFO]: [CHAT] Energy in Inductor: 12207.87 joules
-[01:02:44] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:44] [Client thread/INFO]: [CHAT] Voltage: 0.19285424 volts
-[01:02:44] [Client thread/INFO]: [CHAT] Charge: 0.77141696 coulombs
-[01:02:44] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.07438552 joules
-[01:02:44] [Client thread/INFO]: [CHAT] Current: -30.538586 amperes
-[01:02:44] [Client thread/INFO]: [CHAT] Power Transferred: -5.889496 watts
-[01:02:44] [Client thread/INFO]: [CHAT] Power Dissipated: 29.843369 watts
-[01:02:44] [Client thread/INFO]: [CHAT] Energy in Inductor: 7460.842 joules
-[01:02:44] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:44] [Client thread/INFO]: [CHAT] Voltage: 0.19285424 volts
-[01:02:44] [Client thread/INFO]: [CHAT] Charge: 0.77141696 coulombs
-[01:02:44] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.07438552 joules
-[01:02:44] [Client thread/INFO]: [CHAT] Current: -30.538586 amperes
-[01:02:44] [Client thread/INFO]: [CHAT] Power Transferred: -5.889496 watts
-[01:02:44] [Client thread/INFO]: [CHAT] Power Dissipated: 29.843369 watts
-[01:02:44] [Client thread/INFO]: [CHAT] Energy in Inductor: 7460.842 joules
-[01:02:44] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:44] [Client thread/INFO]: [CHAT] Voltage: 0.44228792 volts
-[01:02:44] [Client thread/INFO]: [CHAT] Charge: 1.7691517 coulombs
-[01:02:44] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.3912372 joules
-[01:02:44] [Client thread/INFO]: [CHAT] Current: -22.93719 amperes
-[01:02:44] [Client thread/INFO]: [CHAT] Power Transferred: -10.144842 watts
-[01:02:44] [Client thread/INFO]: [CHAT] Power Dissipated: 16.835669 watts
-[01:02:44] [Client thread/INFO]: [CHAT] Energy in Inductor: 4208.917 joules
-[01:02:45] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:45] [Client thread/INFO]: [CHAT] Voltage: 0.44228792 volts
-[01:02:45] [Client thread/INFO]: [CHAT] Charge: 1.7691517 coulombs
-[01:02:45] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.3912372 joules
-[01:02:45] [Client thread/INFO]: [CHAT] Current: -22.93719 amperes
-[01:02:45] [Client thread/INFO]: [CHAT] Power Transferred: -10.144842 watts
-[01:02:45] [Client thread/INFO]: [CHAT] Power Dissipated: 16.835669 watts
-[01:02:45] [Client thread/INFO]: [CHAT] Energy in Inductor: 4208.917 joules
-[01:02:45] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:45] [Client thread/INFO]: [CHAT] Voltage: 0.094028845 volts
-[01:02:45] [Client thread/INFO]: [CHAT] Charge: 0.37611538 coulombs
-[01:02:45] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.017682847 joules
-[01:02:45] [Client thread/INFO]: [CHAT] Current: -14.737819 amperes
-[01:02:45] [Client thread/INFO]: [CHAT] Power Transferred: -1.3857801 watts
-[01:02:45] [Client thread/INFO]: [CHAT] Power Dissipated: 6.950506 watts
-[01:02:45] [Client thread/INFO]: [CHAT] Energy in Inductor: 1737.6265 joules
-[01:02:45] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:45] [Client thread/INFO]: [CHAT] Voltage: 0.094028845 volts
-[01:02:45] [Client thread/INFO]: [CHAT] Charge: 0.37611538 coulombs
-[01:02:45] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.017682847 joules
-[01:02:45] [Client thread/INFO]: [CHAT] Current: -14.737819 amperes
-[01:02:45] [Client thread/INFO]: [CHAT] Power Transferred: -1.3857801 watts
-[01:02:45] [Client thread/INFO]: [CHAT] Power Dissipated: 6.950506 watts
-[01:02:45] [Client thread/INFO]: [CHAT] Energy in Inductor: 1737.6265 joules
-[01:02:46] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:46] [Client thread/INFO]: [CHAT] Voltage: 0.682151 volts
-[01:02:46] [Client thread/INFO]: [CHAT] Charge: 2.728604 coulombs
-[01:02:46] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.93066 joules
-[01:02:46] [Client thread/INFO]: [CHAT] Current: -6.097877 amperes
-[01:02:46] [Client thread/INFO]: [CHAT] Power Transferred: -4.159673 watts
-[01:02:46] [Client thread/INFO]: [CHAT] Power Dissipated: 1.1898915 watts
-[01:02:46] [Client thread/INFO]: [CHAT] Energy in Inductor: 297.47284 joules
-[01:02:46] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:46] [Client thread/INFO]: [CHAT] Voltage: 0.682151 volts
-[01:02:46] [Client thread/INFO]: [CHAT] Charge: 2.728604 coulombs
-[01:02:46] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.93066 joules
-[01:02:46] [Client thread/INFO]: [CHAT] Current: -6.097877 amperes
-[01:02:46] [Client thread/INFO]: [CHAT] Power Transferred: -4.159673 watts
-[01:02:46] [Client thread/INFO]: [CHAT] Power Dissipated: 1.1898915 watts
-[01:02:46] [Client thread/INFO]: [CHAT] Energy in Inductor: 297.47284 joules
-[01:02:47] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:47] [Client thread/INFO]: [CHAT] Voltage: -0.60822344 volts
-[01:02:47] [Client thread/INFO]: [CHAT] Charge: -2.4328938 coulombs
-[01:02:47] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.7398715 joules
-[01:02:47] [Client thread/INFO]: [CHAT] Current: 12.093844 amperes
-[01:02:47] [Client thread/INFO]: [CHAT] Power Transferred: -7.3557596 watts
-[01:02:47] [Client thread/INFO]: [CHAT] Power Dissipated: 4.6803546 watts
-[01:02:47] [Client thread/INFO]: [CHAT] Energy in Inductor: 1170.0886 joules
-[01:02:47] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:47] [Client thread/INFO]: [CHAT] Voltage: -0.60822344 volts
-[01:02:47] [Client thread/INFO]: [CHAT] Charge: -2.4328938 coulombs
-[01:02:47] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.7398715 joules
-[01:02:47] [Client thread/INFO]: [CHAT] Current: 12.093844 amperes
-[01:02:47] [Client thread/INFO]: [CHAT] Power Transferred: -7.3557596 watts
-[01:02:47] [Client thread/INFO]: [CHAT] Power Dissipated: 4.6803546 watts
-[01:02:47] [Client thread/INFO]: [CHAT] Energy in Inductor: 1170.0886 joules
-[01:02:48] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:48] [Client thread/INFO]: [CHAT] Voltage: -0.11587735 volts
-[01:02:48] [Client thread/INFO]: [CHAT] Charge: -0.4635094 coulombs
-[01:02:48] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.026855122 joules
-[01:02:48] [Client thread/INFO]: [CHAT] Current: 18.807285 amperes
-[01:02:48] [Client thread/INFO]: [CHAT] Power Transferred: -2.1793385 watts
-[01:02:48] [Client thread/INFO]: [CHAT] Power Dissipated: 11.318849 watts
-[01:02:48] [Client thread/INFO]: [CHAT] Energy in Inductor: 2829.712 joules
-[01:02:48] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:48] [Client thread/INFO]: [CHAT] Voltage: -0.11587735 volts
-[01:02:48] [Client thread/INFO]: [CHAT] Charge: -0.4635094 coulombs
-[01:02:48] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.026855122 joules
-[01:02:48] [Client thread/INFO]: [CHAT] Current: 18.807285 amperes
-[01:02:48] [Client thread/INFO]: [CHAT] Power Transferred: -2.1793385 watts
-[01:02:48] [Client thread/INFO]: [CHAT] Power Dissipated: 11.318849 watts
-[01:02:48] [Client thread/INFO]: [CHAT] Energy in Inductor: 2829.712 joules
-[01:02:49] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:49] [Client thread/INFO]: [CHAT] Voltage: -0.46465153 volts
-[01:02:49] [Client thread/INFO]: [CHAT] Charge: -1.8586061 coulombs
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.4318021 joules
-[01:02:49] [Client thread/INFO]: [CHAT] Current: 25.268127 amperes
-[01:02:49] [Client thread/INFO]: [CHAT] Power Transferred: -11.740874 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Power Dissipated: 20.431305 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Inductor: 5107.826 joules
-[01:02:49] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:49] [Client thread/INFO]: [CHAT] Voltage: -0.46465153 volts
-[01:02:49] [Client thread/INFO]: [CHAT] Charge: -1.8586061 coulombs
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.4318021 joules
-[01:02:49] [Client thread/INFO]: [CHAT] Current: 25.268127 amperes
-[01:02:49] [Client thread/INFO]: [CHAT] Power Transferred: -11.740874 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Power Dissipated: 20.431305 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Inductor: 5107.826 joules
-[01:02:49] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:49] [Client thread/INFO]: [CHAT] Voltage: -0.49775076 volts
-[01:02:49] [Client thread/INFO]: [CHAT] Charge: -1.991003 coulombs
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.49551165 joules
-[01:02:49] [Client thread/INFO]: [CHAT] Current: 27.025106 amperes
-[01:02:49] [Client thread/INFO]: [CHAT] Power Transferred: -13.451767 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Power Dissipated: 23.371405 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Inductor: 5842.851 joules
-[01:02:49] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:49] [Client thread/INFO]: [CHAT] Voltage: -0.49775076 volts
-[01:02:49] [Client thread/INFO]: [CHAT] Charge: -1.991003 coulombs
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.49551165 joules
-[01:02:49] [Client thread/INFO]: [CHAT] Current: 27.025106 amperes
-[01:02:49] [Client thread/INFO]: [CHAT] Power Transferred: -13.451767 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Power Dissipated: 23.371405 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Inductor: 5842.851 joules
-[01:02:49] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:49] [Client thread/INFO]: [CHAT] Voltage: -0.8792164 volts
-[01:02:49] [Client thread/INFO]: [CHAT] Charge: -3.5168655 coulombs
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Capacitor: 1.5460429 joules
-[01:02:49] [Client thread/INFO]: [CHAT] Current: 28.797194 amperes
-[01:02:49] [Client thread/INFO]: [CHAT] Power Transferred: -25.318964 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Power Dissipated: 26.53691 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Inductor: 6634.227 joules
-[01:02:49] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:49] [Client thread/INFO]: [CHAT] Voltage: -0.8792164 volts
-[01:02:49] [Client thread/INFO]: [CHAT] Charge: -3.5168655 coulombs
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Capacitor: 1.5460429 joules
-[01:02:49] [Client thread/INFO]: [CHAT] Current: 28.797194 amperes
-[01:02:49] [Client thread/INFO]: [CHAT] Power Transferred: -25.318964 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Power Dissipated: 26.53691 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Inductor: 6634.227 joules
-[01:02:49] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:49] [Client thread/INFO]: [CHAT] Voltage: -0.18939793 volts
-[01:02:49] [Client thread/INFO]: [CHAT] Charge: -0.7575917 coulombs
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.07174315 joules
-[01:02:49] [Client thread/INFO]: [CHAT] Current: 30.549593 amperes
-[01:02:49] [Client thread/INFO]: [CHAT] Power Transferred: -5.78603 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Power Dissipated: 29.864885 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Inductor: 7466.221 joules
-[01:02:49] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:49] [Client thread/INFO]: [CHAT] Voltage: -0.18939793 volts
-[01:02:49] [Client thread/INFO]: [CHAT] Charge: -0.7575917 coulombs
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.07174315 joules
-[01:02:49] [Client thread/INFO]: [CHAT] Current: 30.549593 amperes
-[01:02:49] [Client thread/INFO]: [CHAT] Power Transferred: -5.78603 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Power Dissipated: 29.864885 watts
-[01:02:49] [Client thread/INFO]: [CHAT] Energy in Inductor: 7466.221 joules
-[01:02:50] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:02:50] [Client thread/INFO]: [CHAT] Voltage: -0.5968538 volts
-[01:02:50] [Client thread/INFO]: [CHAT] Charge: -2.3874152 coulombs
-[01:02:50] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.7124689 joules
-[01:02:50] [Client thread/INFO]: [CHAT] Current: 32.28465 amperes
-[01:02:50] [Client thread/INFO]: [CHAT] Power Transferred: -19.269215 watts
-[01:02:50] [Client thread/INFO]: [CHAT] Power Dissipated: 33.353558 watts
-[01:02:50] [Client thread/INFO]: [CHAT] Energy in Inductor: 8338.389 joules
-[01:02:50] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:02:50] [Client thread/INFO]: [CHAT] Voltage: -0.5968538 volts
-[01:02:50] [Client thread/INFO]: [CHAT] Charge: -2.3874152 coulombs
-[01:02:50] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.7124689 joules
-[01:02:50] [Client thread/INFO]: [CHAT] Current: 32.28465 amperes
-[01:02:50] [Client thread/INFO]: [CHAT] Power Transferred: -19.269215 watts
-[01:02:50] [Client thread/INFO]: [CHAT] Power Dissipated: 33.353558 watts
-[01:02:50] [Client thread/INFO]: [CHAT] Energy in Inductor: 8338.389 joules
-[01:02:56] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:02:56] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:02:58] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:02:58] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:02:59] [Client thread/INFO]: [CHAT] Set voltage to 16
-[01:02:59] [Client thread/INFO]: [CHAT] Set voltage to 16
-[01:03:03] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:03] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:11] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:11] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:14] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:14] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:18] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:18] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:19] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:19] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:20] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:20] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:22] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:22] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:24] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:24] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:25] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:25] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:26] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:26] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:28] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:28] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:29] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:29] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:31] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:31] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:32] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:32] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:33] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:33] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:34] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:35] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:36] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:36] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:36] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:36] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:37] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:03:37] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:03] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:03] [Client thread/INFO]: [CHAT] Voltage: -48.84846 volts
-[01:04:03] [Client thread/INFO]: [CHAT] Charge: -12505.206 coulombs
-[01:04:03] [Client thread/INFO]: [CHAT] Energy in Capacitor: 305430.03 joules
-[01:04:03] [Client thread/INFO]: [CHAT] Current: -620.3906 amperes
-[01:04:03] [Client thread/INFO]: [CHAT] Power Transferred: 30305.127 watts
-[01:04:03] [Client thread/INFO]: [CHAT] Power Dissipated: 1539.5382 watts
-[01:04:03] [Client thread/INFO]: [CHAT] Energy in Inductor: 3079076.2 joules
-[01:04:03] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:03] [Client thread/INFO]: [CHAT] Voltage: -48.84846 volts
-[01:04:03] [Client thread/INFO]: [CHAT] Charge: -12505.206 coulombs
-[01:04:03] [Client thread/INFO]: [CHAT] Energy in Capacitor: 305430.03 joules
-[01:04:03] [Client thread/INFO]: [CHAT] Current: -620.3906 amperes
-[01:04:03] [Client thread/INFO]: [CHAT] Power Transferred: 30305.127 watts
-[01:04:03] [Client thread/INFO]: [CHAT] Power Dissipated: 1539.5382 watts
-[01:04:03] [Client thread/INFO]: [CHAT] Energy in Inductor: 3079076.2 joules
-[01:04:13] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:13] [Client thread/INFO]: [CHAT] Voltage: -14.675819 volts
-[01:04:13] [Client thread/INFO]: [CHAT] Charge: -3757.0098 coulombs
-[01:04:13] [Client thread/INFO]: [CHAT] Energy in Capacitor: 27568.598 joules
-[01:04:13] [Client thread/INFO]: [CHAT] Current: -973.66284 amperes
-[01:04:13] [Client thread/INFO]: [CHAT] Power Transferred: 14289.3 watts
-[01:04:13] [Client thread/INFO]: [CHAT] Power Dissipated: 3792.0774 watts
-[01:04:13] [Client thread/INFO]: [CHAT] Energy in Inductor: 7584154.5 joules
-[01:04:13] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:13] [Client thread/INFO]: [CHAT] Voltage: -14.675819 volts
-[01:04:13] [Client thread/INFO]: [CHAT] Charge: -3757.0098 coulombs
-[01:04:13] [Client thread/INFO]: [CHAT] Energy in Capacitor: 27568.598 joules
-[01:04:13] [Client thread/INFO]: [CHAT] Current: -973.66284 amperes
-[01:04:13] [Client thread/INFO]: [CHAT] Power Transferred: 14289.3 watts
-[01:04:13] [Client thread/INFO]: [CHAT] Power Dissipated: 3792.0774 watts
-[01:04:13] [Client thread/INFO]: [CHAT] Energy in Inductor: 7584154.5 joules
-[01:04:14] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:14] [Client thread/INFO]: [CHAT] Voltage: -10.161817 volts
-[01:04:14] [Client thread/INFO]: [CHAT] Charge: -2601.425 coulombs
-[01:04:14] [Client thread/INFO]: [CHAT] Energy in Capacitor: 13217.603 joules
-[01:04:14] [Client thread/INFO]: [CHAT] Current: -949.9973 amperes
-[01:04:14] [Client thread/INFO]: [CHAT] Power Transferred: 9653.698 watts
-[01:04:14] [Client thread/INFO]: [CHAT] Power Dissipated: 3609.9797 watts
-[01:04:14] [Client thread/INFO]: [CHAT] Energy in Inductor: 7219959.0 joules
-[01:04:15] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:15] [Client thread/INFO]: [CHAT] Voltage: -10.161817 volts
-[01:04:15] [Client thread/INFO]: [CHAT] Charge: -2601.425 coulombs
-[01:04:15] [Client thread/INFO]: [CHAT] Energy in Capacitor: 13217.603 joules
-[01:04:15] [Client thread/INFO]: [CHAT] Current: -949.9973 amperes
-[01:04:15] [Client thread/INFO]: [CHAT] Power Transferred: 9653.698 watts
-[01:04:15] [Client thread/INFO]: [CHAT] Power Dissipated: 3609.9797 watts
-[01:04:15] [Client thread/INFO]: [CHAT] Energy in Inductor: 7219959.0 joules
-[01:04:15] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:15] [Client thread/INFO]: [CHAT] Voltage: -6.8638144 volts
-[01:04:15] [Client thread/INFO]: [CHAT] Charge: -1757.1365 coulombs
-[01:04:15] [Client thread/INFO]: [CHAT] Energy in Capacitor: 6030.329 joules
-[01:04:15] [Client thread/INFO]: [CHAT] Current: -924.64185 amperes
-[01:04:15] [Client thread/INFO]: [CHAT] Power Transferred: 6346.57 watts
-[01:04:15] [Client thread/INFO]: [CHAT] Power Dissipated: 3419.8503 watts
-[01:04:15] [Client thread/INFO]: [CHAT] Energy in Inductor: 6839700.5 joules
-[01:04:15] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:15] [Client thread/INFO]: [CHAT] Voltage: -6.8638144 volts
-[01:04:15] [Client thread/INFO]: [CHAT] Charge: -1757.1365 coulombs
-[01:04:15] [Client thread/INFO]: [CHAT] Energy in Capacitor: 6030.329 joules
-[01:04:15] [Client thread/INFO]: [CHAT] Current: -924.64185 amperes
-[01:04:15] [Client thread/INFO]: [CHAT] Power Transferred: 6346.57 watts
-[01:04:15] [Client thread/INFO]: [CHAT] Power Dissipated: 3419.8503 watts
-[01:04:15] [Client thread/INFO]: [CHAT] Energy in Inductor: 6839700.5 joules
-[01:04:16] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:16] [Client thread/INFO]: [CHAT] Voltage: -3.4909327 volts
-[01:04:16] [Client thread/INFO]: [CHAT] Charge: -893.6788 coulombs
-[01:04:16] [Client thread/INFO]: [CHAT] Energy in Capacitor: 1559.8862 joules
-[01:04:16] [Client thread/INFO]: [CHAT] Current: -891.40894 amperes
-[01:04:16] [Client thread/INFO]: [CHAT] Power Transferred: 3111.8486 watts
-[01:04:16] [Client thread/INFO]: [CHAT] Power Dissipated: 3178.4397 watts
-[01:04:16] [Client thread/INFO]: [CHAT] Energy in Inductor: 6356879.0 joules
-[01:04:16] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:16] [Client thread/INFO]: [CHAT] Voltage: -3.4909327 volts
-[01:04:16] [Client thread/INFO]: [CHAT] Charge: -893.6788 coulombs
-[01:04:16] [Client thread/INFO]: [CHAT] Energy in Capacitor: 1559.8862 joules
-[01:04:16] [Client thread/INFO]: [CHAT] Current: -891.40894 amperes
-[01:04:16] [Client thread/INFO]: [CHAT] Power Transferred: 3111.8486 watts
-[01:04:16] [Client thread/INFO]: [CHAT] Power Dissipated: 3178.4397 watts
-[01:04:16] [Client thread/INFO]: [CHAT] Energy in Inductor: 6356879.0 joules
-[01:04:17] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:17] [Client thread/INFO]: [CHAT] Voltage: -0.4192146 volts
-[01:04:17] [Client thread/INFO]: [CHAT] Charge: -107.31894 coulombs
-[01:04:17] [Client thread/INFO]: [CHAT] Energy in Capacitor: 22.494833 joules
-[01:04:17] [Client thread/INFO]: [CHAT] Current: -854.33954 amperes
-[01:04:17] [Client thread/INFO]: [CHAT] Power Transferred: 358.1516 watts
-[01:04:17] [Client thread/INFO]: [CHAT] Power Dissipated: 2919.5845 watts
-[01:04:17] [Client thread/INFO]: [CHAT] Energy in Inductor: 5839168.5 joules
-[01:04:17] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:17] [Client thread/INFO]: [CHAT] Voltage: -0.4192146 volts
-[01:04:17] [Client thread/INFO]: [CHAT] Charge: -107.31894 coulombs
-[01:04:17] [Client thread/INFO]: [CHAT] Energy in Capacitor: 22.494833 joules
-[01:04:17] [Client thread/INFO]: [CHAT] Current: -854.33954 amperes
-[01:04:17] [Client thread/INFO]: [CHAT] Power Transferred: 358.1516 watts
-[01:04:17] [Client thread/INFO]: [CHAT] Power Dissipated: 2919.5845 watts
-[01:04:17] [Client thread/INFO]: [CHAT] Energy in Inductor: 5839168.5 joules
-[01:04:18] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:18] [Client thread/INFO]: [CHAT] Voltage: 2.5136833 volts
-[01:04:18] [Client thread/INFO]: [CHAT] Charge: 643.5029 coulombs
-[01:04:18] [Client thread/INFO]: [CHAT] Energy in Capacitor: 808.7813 joules
-[01:04:18] [Client thread/INFO]: [CHAT] Current: -812.3828 amperes
-[01:04:18] [Client thread/INFO]: [CHAT] Power Transferred: -2042.0731 watts
-[01:04:18] [Client thread/INFO]: [CHAT] Power Dissipated: 2639.8633 watts
-[01:04:18] [Client thread/INFO]: [CHAT] Energy in Inductor: 5279726.5 joules
-[01:04:18] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:18] [Client thread/INFO]: [CHAT] Voltage: 2.5136833 volts
-[01:04:18] [Client thread/INFO]: [CHAT] Charge: 643.5029 coulombs
-[01:04:18] [Client thread/INFO]: [CHAT] Energy in Capacitor: 808.7813 joules
-[01:04:18] [Client thread/INFO]: [CHAT] Current: -812.3828 amperes
-[01:04:18] [Client thread/INFO]: [CHAT] Power Transferred: -2042.0731 watts
-[01:04:18] [Client thread/INFO]: [CHAT] Power Dissipated: 2639.8633 watts
-[01:04:18] [Client thread/INFO]: [CHAT] Energy in Inductor: 5279726.5 joules
-[01:04:19] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:19] [Client thread/INFO]: [CHAT] Voltage: 5.440999 volts
-[01:04:19] [Client thread/INFO]: [CHAT] Charge: 1392.8958 coulombs
-[01:04:19] [Client thread/INFO]: [CHAT] Energy in Capacitor: 3789.3723 joules
-[01:04:19] [Client thread/INFO]: [CHAT] Current: -763.40125 amperes
-[01:04:19] [Client thread/INFO]: [CHAT] Power Transferred: -4153.6655 watts
-[01:04:19] [Client thread/INFO]: [CHAT] Power Dissipated: 2331.126 watts
-[01:04:19] [Client thread/INFO]: [CHAT] Energy in Inductor: 4662251.5 joules
-[01:04:19] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:19] [Client thread/INFO]: [CHAT] Voltage: 5.440999 volts
-[01:04:19] [Client thread/INFO]: [CHAT] Charge: 1392.8958 coulombs
-[01:04:19] [Client thread/INFO]: [CHAT] Energy in Capacitor: 3789.3723 joules
-[01:04:19] [Client thread/INFO]: [CHAT] Current: -763.40125 amperes
-[01:04:19] [Client thread/INFO]: [CHAT] Power Transferred: -4153.6655 watts
-[01:04:19] [Client thread/INFO]: [CHAT] Power Dissipated: 2331.126 watts
-[01:04:19] [Client thread/INFO]: [CHAT] Energy in Inductor: 4662251.5 joules
-[01:04:21] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:21] [Client thread/INFO]: [CHAT] Voltage: 11.838529 volts
-[01:04:21] [Client thread/INFO]: [CHAT] Charge: 3030.6633 coulombs
-[01:04:21] [Client thread/INFO]: [CHAT] Energy in Capacitor: 17939.297 joules
-[01:04:21] [Client thread/INFO]: [CHAT] Current: -625.69025 amperes
-[01:04:21] [Client thread/INFO]: [CHAT] Power Transferred: -7407.252 watts
-[01:04:21] [Client thread/INFO]: [CHAT] Power Dissipated: 1565.9532 watts
-[01:04:21] [Client thread/INFO]: [CHAT] Energy in Inductor: 3131906.2 joules
-[01:04:21] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:21] [Client thread/INFO]: [CHAT] Voltage: 11.838529 volts
-[01:04:21] [Client thread/INFO]: [CHAT] Charge: 3030.6633 coulombs
-[01:04:21] [Client thread/INFO]: [CHAT] Energy in Capacitor: 17939.297 joules
-[01:04:21] [Client thread/INFO]: [CHAT] Current: -625.69025 amperes
-[01:04:21] [Client thread/INFO]: [CHAT] Power Transferred: -7407.252 watts
-[01:04:21] [Client thread/INFO]: [CHAT] Power Dissipated: 1565.9532 watts
-[01:04:21] [Client thread/INFO]: [CHAT] Energy in Inductor: 3131906.2 joules
-[01:04:23] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:23] [Client thread/INFO]: [CHAT] Voltage: 15.837523 volts
-[01:04:23] [Client thread/INFO]: [CHAT] Charge: 4054.406 coulombs
-[01:04:23] [Client thread/INFO]: [CHAT] Energy in Capacitor: 32105.875 joules
-[01:04:23] [Client thread/INFO]: [CHAT] Current: -509.1371 amperes
-[01:04:23] [Client thread/INFO]: [CHAT] Power Transferred: -8063.4707 watts
-[01:04:23] [Client thread/INFO]: [CHAT] Power Dissipated: 1036.8823 watts
-[01:04:23] [Client thread/INFO]: [CHAT] Energy in Inductor: 2073764.6 joules
-[01:04:23] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:23] [Client thread/INFO]: [CHAT] Voltage: 15.837523 volts
-[01:04:23] [Client thread/INFO]: [CHAT] Charge: 4054.406 coulombs
-[01:04:23] [Client thread/INFO]: [CHAT] Energy in Capacitor: 32105.875 joules
-[01:04:23] [Client thread/INFO]: [CHAT] Current: -509.1371 amperes
-[01:04:23] [Client thread/INFO]: [CHAT] Power Transferred: -8063.4707 watts
-[01:04:23] [Client thread/INFO]: [CHAT] Power Dissipated: 1036.8823 watts
-[01:04:23] [Client thread/INFO]: [CHAT] Energy in Inductor: 2073764.6 joules
-[01:04:26] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:26] [Client thread/INFO]: [CHAT] Voltage: 19.995377 volts
-[01:04:26] [Client thread/INFO]: [CHAT] Charge: 5118.8164 coulombs
-[01:04:26] [Client thread/INFO]: [CHAT] Energy in Capacitor: 51176.332 joules
-[01:04:26] [Client thread/INFO]: [CHAT] Current: -340.16632 amperes
-[01:04:26] [Client thread/INFO]: [CHAT] Power Transferred: -6801.754 watts
-[01:04:26] [Client thread/INFO]: [CHAT] Power Dissipated: 462.8525 watts
-[01:04:26] [Client thread/INFO]: [CHAT] Energy in Inductor: 925705.0 joules
-[01:04:26] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:26] [Client thread/INFO]: [CHAT] Voltage: 19.995377 volts
-[01:04:26] [Client thread/INFO]: [CHAT] Charge: 5118.8164 coulombs
-[01:04:26] [Client thread/INFO]: [CHAT] Energy in Capacitor: 51176.332 joules
-[01:04:26] [Client thread/INFO]: [CHAT] Current: -340.16632 amperes
-[01:04:26] [Client thread/INFO]: [CHAT] Power Transferred: -6801.754 watts
-[01:04:26] [Client thread/INFO]: [CHAT] Power Dissipated: 462.8525 watts
-[01:04:26] [Client thread/INFO]: [CHAT] Energy in Inductor: 925705.0 joules
-[01:04:28] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:28] [Client thread/INFO]: [CHAT] Voltage: 22.007368 volts
-[01:04:28] [Client thread/INFO]: [CHAT] Charge: 5633.886 coulombs
-[01:04:28] [Client thread/INFO]: [CHAT] Energy in Capacitor: 61993.504 joules
-[01:04:28] [Client thread/INFO]: [CHAT] Current: -215.51225 amperes
-[01:04:28] [Client thread/INFO]: [CHAT] Power Transferred: -4742.8574 watts
-[01:04:28] [Client thread/INFO]: [CHAT] Power Dissipated: 185.78214 watts
-[01:04:28] [Client thread/INFO]: [CHAT] Energy in Inductor: 371564.25 joules
-[01:04:28] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:28] [Client thread/INFO]: [CHAT] Voltage: 22.007368 volts
-[01:04:28] [Client thread/INFO]: [CHAT] Charge: 5633.886 coulombs
-[01:04:28] [Client thread/INFO]: [CHAT] Energy in Capacitor: 61993.504 joules
-[01:04:28] [Client thread/INFO]: [CHAT] Current: -215.51225 amperes
-[01:04:28] [Client thread/INFO]: [CHAT] Power Transferred: -4742.8574 watts
-[01:04:28] [Client thread/INFO]: [CHAT] Power Dissipated: 185.78214 watts
-[01:04:28] [Client thread/INFO]: [CHAT] Energy in Inductor: 371564.25 joules
-[01:04:29] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:29] [Client thread/INFO]: [CHAT] Voltage: 23.133223 volts
-[01:04:29] [Client thread/INFO]: [CHAT] Charge: 5922.105 coulombs
-[01:04:29] [Client thread/INFO]: [CHAT] Energy in Capacitor: 68498.69 joules
-[01:04:29] [Client thread/INFO]: [CHAT] Current: -95.56906 amperes
-[01:04:29] [Client thread/INFO]: [CHAT] Power Transferred: -2210.8203 watts
-[01:04:29] [Client thread/INFO]: [CHAT] Power Dissipated: 36.533783 watts
-[01:04:29] [Client thread/INFO]: [CHAT] Energy in Inductor: 73067.56 joules
-[01:04:29] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:29] [Client thread/INFO]: [CHAT] Voltage: 23.114098 volts
-[01:04:29] [Client thread/INFO]: [CHAT] Charge: 5917.209 coulombs
-[01:04:29] [Client thread/INFO]: [CHAT] Energy in Capacitor: 68385.48 joules
-[01:04:29] [Client thread/INFO]: [CHAT] Current: -98.718414 amperes
-[01:04:29] [Client thread/INFO]: [CHAT] Power Transferred: -2281.787 watts
-[01:04:29] [Client thread/INFO]: [CHAT] Power Dissipated: 38.981304 watts
-[01:04:29] [Client thread/INFO]: [CHAT] Energy in Inductor: 77962.6 joules
-[01:04:31] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:31] [Client thread/INFO]: [CHAT] Voltage: 23.422966 volts
-[01:04:31] [Client thread/INFO]: [CHAT] Charge: 5996.2793 coulombs
-[01:04:31] [Client thread/INFO]: [CHAT] Energy in Capacitor: 70225.32 joules
-[01:04:31] [Client thread/INFO]: [CHAT] Current: -5.8397183 amperes
-[01:04:31] [Client thread/INFO]: [CHAT] Power Transferred: -136.78352 watts
-[01:04:31] [Client thread/INFO]: [CHAT] Power Dissipated: 0.13640925 watts
-[01:04:31] [Client thread/INFO]: [CHAT] Energy in Inductor: 272.81848 joules
-[01:04:31] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:31] [Client thread/INFO]: [CHAT] Voltage: 23.422966 volts
-[01:04:31] [Client thread/INFO]: [CHAT] Charge: 5996.2793 coulombs
-[01:04:31] [Client thread/INFO]: [CHAT] Energy in Capacitor: 70225.32 joules
-[01:04:31] [Client thread/INFO]: [CHAT] Current: -5.8397183 amperes
-[01:04:31] [Client thread/INFO]: [CHAT] Power Transferred: -136.78352 watts
-[01:04:31] [Client thread/INFO]: [CHAT] Power Dissipated: 0.13640925 watts
-[01:04:31] [Client thread/INFO]: [CHAT] Energy in Inductor: 272.81848 joules
-[01:04:32] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:04:32] [Client thread/INFO]: [CHAT] Voltage: 23.226528 volts
-[01:04:32] [Client thread/INFO]: [CHAT] Charge: 5945.991 coulombs
-[01:04:32] [Client thread/INFO]: [CHAT] Energy in Capacitor: 69052.37 joules
-[01:04:32] [Client thread/INFO]: [CHAT] Current: 75.1844 amperes
-[01:04:32] [Client thread/INFO]: [CHAT] Power Transferred: 1746.2726 watts
-[01:04:32] [Client thread/INFO]: [CHAT] Power Dissipated: 22.610779 watts
-[01:04:32] [Client thread/INFO]: [CHAT] Energy in Inductor: 45221.555 joules
-[01:04:32] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:04:32] [Client thread/INFO]: [CHAT] Voltage: 23.226528 volts
-[01:04:32] [Client thread/INFO]: [CHAT] Charge: 5945.991 coulombs
-[01:04:32] [Client thread/INFO]: [CHAT] Energy in Capacitor: 69052.37 joules
-[01:04:32] [Client thread/INFO]: [CHAT] Current: 75.1844 amperes
-[01:04:32] [Client thread/INFO]: [CHAT] Power Transferred: 1746.2726 watts
-[01:04:32] [Client thread/INFO]: [CHAT] Power Dissipated: 22.610779 watts
-[01:04:32] [Client thread/INFO]: [CHAT] Energy in Inductor: 45221.555 joules
-[01:04:34] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:34] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:35] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:35] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:38] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:38] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:41] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:41] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:43] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:43] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:44] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:45] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:45] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:46] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:48] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:48] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:50] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:50] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:52] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:04:52] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:05:00] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:05:00] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:00] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:00] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:00] [Client thread/INFO]: [CHAT] Current: 0.0 amperes
-[01:05:00] [Client thread/INFO]: [CHAT] Power Transferred: 0.0 watts
-[01:05:00] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:00] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:00] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:05:00] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:00] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:00] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:00] [Client thread/INFO]: [CHAT] Current: -1814.8954 amperes
-[01:05:00] [Client thread/INFO]: [CHAT] Power Transferred: -0.0 watts
-[01:05:00] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:00] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:04] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:05:04] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:04] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:04] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:04] [Client thread/INFO]: [CHAT] Current: 0.0 amperes
-[01:05:04] [Client thread/INFO]: [CHAT] Power Transferred: 0.0 watts
-[01:05:04] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:04] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:04] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:05:04] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:04] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:04] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:04] [Client thread/INFO]: [CHAT] Current: -1814.8954 amperes
-[01:05:04] [Client thread/INFO]: [CHAT] Power Transferred: -0.0 watts
-[01:05:04] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:04] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:05] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:05:05] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:05] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:05] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:05] [Client thread/INFO]: [CHAT] Current: 0.0 amperes
-[01:05:05] [Client thread/INFO]: [CHAT] Power Transferred: 0.0 watts
-[01:05:05] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:05] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:05] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:05:05] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:05] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:05] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:05] [Client thread/INFO]: [CHAT] Current: -1814.8954 amperes
-[01:05:05] [Client thread/INFO]: [CHAT] Power Transferred: -0.0 watts
-[01:05:05] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:05] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:11] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:05:11] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:11] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:11] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:11] [Client thread/INFO]: [CHAT] Current: 0.0 amperes
-[01:05:11] [Client thread/INFO]: [CHAT] Power Transferred: 0.0 watts
-[01:05:11] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:11] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:11] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:05:11] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:11] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:11] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:11] [Client thread/INFO]: [CHAT] Current: -1814.8954 amperes
-[01:05:11] [Client thread/INFO]: [CHAT] Power Transferred: -0.0 watts
-[01:05:11] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:11] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:15] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:05:15] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:15] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:15] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:15] [Client thread/INFO]: [CHAT] Current: 0.0 amperes
-[01:05:15] [Client thread/INFO]: [CHAT] Power Transferred: 0.0 watts
-[01:05:15] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:15] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:15] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:05:15] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:15] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:15] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:15] [Client thread/INFO]: [CHAT] Current: -1814.8954 amperes
-[01:05:15] [Client thread/INFO]: [CHAT] Power Transferred: -0.0 watts
-[01:05:15] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:15] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:19] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:05:19] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:19] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:19] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:19] [Client thread/INFO]: [CHAT] Current: 0.0 amperes
-[01:05:19] [Client thread/INFO]: [CHAT] Power Transferred: 0.0 watts
-[01:05:19] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:19] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:19] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:05:19] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:19] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:19] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:19] [Client thread/INFO]: [CHAT] Current: -1814.8954 amperes
-[01:05:19] [Client thread/INFO]: [CHAT] Power Transferred: -0.0 watts
-[01:05:19] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:19] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:22] [Client thread/INFO]: [CHAT] --- Clientside Readings ---
-[01:05:22] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:22] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:22] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:22] [Client thread/INFO]: [CHAT] Current: 0.0 amperes
-[01:05:22] [Client thread/INFO]: [CHAT] Power Transferred: 0.0 watts
-[01:05:22] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:22] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:22] [Client thread/INFO]: [CHAT] --- Serverside Readings ---
-[01:05:22] [Client thread/INFO]: [CHAT] Voltage: 0.0 volts
-[01:05:22] [Client thread/INFO]: [CHAT] Charge: 0.0 coulombs
-[01:05:22] [Client thread/INFO]: [CHAT] Energy in Capacitor: 0.0 joules
-[01:05:22] [Client thread/INFO]: [CHAT] Current: -1814.8954 amperes
-[01:05:22] [Client thread/INFO]: [CHAT] Power Transferred: -0.0 watts
-[01:05:22] [Client thread/INFO]: [CHAT] Power Dissipated: 0.0 watts
-[01:05:22] [Client thread/INFO]: [CHAT] Energy in Inductor: 0.0 joules
-[01:05:27] [Server thread/INFO]: [@: Toggled downfall]
-[01:05:27] [Client thread/INFO]: [CHAT] [@: Toggled downfall]
-[01:06:33] [Server thread/INFO]: [@: Set the time to 1000]
-[01:06:33] [Client thread/INFO]: [CHAT] [@: Set the time to 1000]
-[01:06:55] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:06:55] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:08:17] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:08:17] [Client thread/INFO]: [CHAT] Set voltage to 64
-[01:11:23] [Server thread/INFO]: Saving and pausing game...
-[01:11:23] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
-[01:11:23] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
-[01:11:23] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
-[01:11:24] [Server thread/INFO]: Stopping server
-[01:11:24] [Server thread/INFO]: Saving players
-[01:11:24] [Server thread/INFO]: Saving worlds
-[01:11:24] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
-[01:11:24] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
-[01:11:24] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
-[01:11:24] [Server thread/INFO] [FML]: Unloading dimension 0
-[01:11:24] [Server thread/INFO] [FML]: Unloading dimension -1
-[01:11:24] [Server thread/INFO] [FML]: Unloading dimension 1
-[01:11:24] [Server thread/INFO] [FML]: Applying holder lookups
-[01:11:24] [Server thread/INFO] [FML]: Holder lookups applied
-[01:11:26] [Client thread/INFO]: Stopping!
-[01:11:26] [Client thread/INFO]: SoundSystem shutting down...
-AL lib: (WW) FreeDevice: (0x7fe2fc308000) Deleting 15 Buffer(s)
-[01:11:26] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[02:07:33] [Server thread/INFO]: Saving and pausing game...
+[02:07:33] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
+[02:07:33] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
+[02:07:33] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
+[02:07:38] [Server thread/INFO]: Stopping server
+[02:07:38] [Server thread/INFO]: Saving players
+[02:07:38] [Server thread/INFO]: Saving worlds
+[02:07:38] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
+[02:07:38] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
+[02:07:38] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
+[02:07:38] [Server thread/INFO] [FML]: Unloading dimension 0
+[02:07:38] [Server thread/INFO] [FML]: Unloading dimension -1
+[02:07:38] [Server thread/INFO] [FML]: Unloading dimension 1
+[02:07:38] [Server thread/INFO] [FML]: Applying holder lookups
+[02:07:38] [Server thread/INFO] [FML]: Holder lookups applied
+[02:07:41] [Client thread/INFO]: Stopping!
+[02:07:41] [Client thread/INFO]: SoundSystem shutting down...
+AL lib: (WW) FreeDevice: (0x7fdc3a52ac00) Deleting 6 Buffer(s)
+[02:07:41] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
 
 BUILD SUCCESSFUL
 
-Total time: 11 mins 53.007 secs
+Total time: 1 mins 47.676 secs

@@ -219,7 +219,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 					continue;
 				}
 
-				//updates nextVoltage based on current state
+				// updates nextVoltage based on current state
 				dirtied |= updatePower(e, o, ol);
 
 				double x = pos.getX() + 0.5;

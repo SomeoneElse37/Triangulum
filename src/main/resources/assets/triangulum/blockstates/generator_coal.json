@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "triangulum:generator_coal" },
+        "facing=south": { "model": "triangulum:generator_coal", "y": 180 },
+        "facing=west":  { "model": "triangulum:generator_coal", "y": 270 },
+        "facing=east":  { "model": "triangulum:generator_coal", "y": 90 }
+    }
+}

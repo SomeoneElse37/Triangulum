@@ -15,6 +15,7 @@ public abstract class GeneratorLogicBase extends TileEntity implements
 
 	public GeneratorLogicBase() {
 		super();
+		running = false;
 	}
 
 	/**

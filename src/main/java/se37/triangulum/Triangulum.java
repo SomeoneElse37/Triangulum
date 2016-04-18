@@ -5,6 +5,9 @@ import java.util.List;
 
 import se37.triangulum.core.Anglotron;
 import se37.triangulum.core.Octahedron;
+import se37.triangulum.core.OctahedronLogic;
+import se37.triangulum.powergen.GeneratorCoal;
+import se37.triangulum.powergen.GeneratorCoalLogic;
 import se37.triangulum.proxy.CommonProxy;
 import net.minecraft.init.Blocks;
 import net.minecraft.block.Block;
@@ -63,14 +66,19 @@ public class Triangulum {
 	private static Block octahedronIron;
 	private static Block octahedronGold;
 	private static Block octahedronDiamond;
-	
+
+	private static Block generatorCoal;
+
 	private static List<String> itemNames;
 
 	/**
-	 * Sets the Item's unlocalized name to the given name, registers both with GameRegistry,
-	 * and adds the item's name to the local list of item names.
-	 * @param i the item to register
-	 * @param name the name to give it
+	 * Sets the Item's unlocalized name to the given name, registers both with
+	 * GameRegistry, and adds the item's name to the local list of item names.
+	 * 
+	 * @param i
+	 *            the item to register
+	 * @param name
+	 *            the name to give it
 	 * @return the item, for convenience
 	 */
 	private static Item registerItem(Item i, String name) {
@@ -79,12 +87,15 @@ public class Triangulum {
 		itemNames.add(name);
 		return i;
 	}
-	
+
 	/**
-	 * Sets the Block's unlocalized name to the given name, registers both with GameRegistry,
-	 * and adds the name to the local list of item names.
-	 * @param i the item to register
-	 * @param name the name to give it
+	 * Sets the Block's unlocalized name to the given name, registers both with
+	 * GameRegistry, and adds the name to the local list of item names.
+	 * 
+	 * @param i
+	 *            the item to register
+	 * @param name
+	 *            the name to give it
 	 * @return the item, for convenience
 	 */
 	private static Block registerBlock(Block b, String name) {
@@ -93,77 +104,96 @@ public class Triangulum {
 		itemNames.add(name);
 		return b;
 	}
-	
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent preInitEvent) {
 		itemNames = new LinkedList<String>();
-		
-		triangleWood = registerItem(new Item().setCreativeTab(CreativeTabs.tabMisc), "triangle_wood");
-		triangleIron = registerItem(new Item().setCreativeTab(CreativeTabs.tabMisc), "triangle_iron");
-		triangleGold = registerItem(new Item().setCreativeTab(CreativeTabs.tabMisc), "triangle_gold");
-		triangleDiamond = registerItem(new Item().setCreativeTab(CreativeTabs.tabMisc), "triangle_diamond");
 
+		triangleWood = registerItem(
+				new Item().setCreativeTab(CreativeTabs.tabMisc),
+				"triangle_wood");
+		triangleIron = registerItem(
+				new Item().setCreativeTab(CreativeTabs.tabMisc),
+				"triangle_iron");
+		triangleGold = registerItem(
+				new Item().setCreativeTab(CreativeTabs.tabMisc),
+				"triangle_gold");
+		triangleDiamond = registerItem(
+				new Item().setCreativeTab(CreativeTabs.tabMisc),
+				"triangle_diamond");
 
 		anglotronWood = registerItem(new Anglotron(1, 1), "anglotron_wood");
 		anglotronIron = registerItem(new Anglotron(4, 4), "anglotron_iron");
 		anglotronGold = registerItem(new Anglotron(16, 16), "anglotron_gold");
-		anglotronDiamond = registerItem(new Anglotron(64, 64), "anglotron_diamond");
+		anglotronDiamond = registerItem(new Anglotron(64, 64),
+				"anglotron_diamond");
+		// C . V . R/d . L/d . d
+		octahedronWood = registerBlock(new Octahedron(Material.wood, 4, 1,
+				0.008F, 4, 8), "octahedron_wood");
+		octahedronIron = registerBlock(new Octahedron(Material.rock, 16, 4,
+				0.004F, 4, 16), "octahedron_iron");
+		octahedronGold = registerBlock(new Octahedron(Material.rock, 64, 16,
+				0.002F, 4, 32), "octahedron_gold");
+		octahedronDiamond = registerBlock(new Octahedron(Material.rock, 256,
+				64, 0.001F, 4, 64), "octahedron_diamond");
 
-																//		  C   V   R/d   L/d  d
-		octahedronWood = registerBlock(new Octahedron(Material.wood,      4,  1, 0.008F, 4,  8), "octahedron_wood");
-		octahedronIron = registerBlock(new Octahedron(Material.rock,     16,  4, 0.004F, 4, 16), "octahedron_iron");
-		octahedronGold = registerBlock(new Octahedron(Material.rock,     64, 16, 0.002F, 4, 32), "octahedron_gold");
-		octahedronDiamond = registerBlock(new Octahedron(Material.rock, 256, 64, 0.001F, 4, 64), "octahedron_diamond");
+		generatorCoal = registerBlock(new GeneratorCoal(Material.rock),
+				"generator_coal");
 
-		GameRegistry.registerTileEntity(se37.triangulum.core.OctahedronLogic.class,
+		GameRegistry.registerTileEntity(OctahedronLogic.class,
 				"octahedronLogic");
+		GameRegistry.registerTileEntity(GeneratorCoalLogic.class,
+				"generatorCoalLogic");
 
 		proxy.registerClientHandlers();
 	};
 
-		
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.registerItemModels(itemNames.toArray(new String[itemNames.size()]));
-		
-		// For use in crafting recipes
-		ItemStack woodTri = new ItemStack(Triangulum.triangleWood);
-		ItemStack ironTri = new ItemStack(Triangulum.triangleIron);
-		ItemStack goldTri = new ItemStack(Triangulum.triangleGold);
-		ItemStack diamTri = new ItemStack(Triangulum.triangleDiamond);
 
-		//Register recipes
+		// For use in crafting recipes
+		ItemStack woodTri = new ItemStack(triangleWood);
+		ItemStack ironTri = new ItemStack(triangleIron);
+		ItemStack goldTri = new ItemStack(triangleGold);
+		ItemStack diamTri = new ItemStack(triangleDiamond);
+
+		// Register recipes
 		GameRegistry.addRecipe(new ShapedOreRecipe(woodTri, " s ", "   ",
 				"s s", 's', "stickWood"));
-		GameRegistry.addRecipe(new ItemStack(Triangulum.triangleIron, 2),
-				" s ", "   ", "s s", 's', new ItemStack(Items.iron_ingot));
-		GameRegistry.addRecipe(new ItemStack(Triangulum.triangleGold, 2),
-				" s ", "   ", "s s", 's', new ItemStack(Items.gold_ingot));
+		GameRegistry.addRecipe(new ItemStack(triangleIron, 2), " s ", "   ",
+				"s s", 's', new ItemStack(Items.iron_ingot));
+		GameRegistry.addRecipe(new ItemStack(triangleGold, 2), " s ", "   ",
+				"s s", 's', new ItemStack(Items.gold_ingot));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
-				Triangulum.triangleDiamond, 2), " s ", "   ", "s s", 's',
-				"gemDiamond"));
+				triangleDiamond, 2), " s ", "   ", "s s", 's', "gemDiamond"));
 
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				new ItemStack(anglotronWood), "l", "t", "r", 'l', "gemLapis",
+				't', woodTri, 'r', "dustRedstone"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				new ItemStack(anglotronIron), "l", "t", "r", 'l', "gemLapis",
+				't', ironTri, 'r', "dustRedstone"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				new ItemStack(anglotronGold), "l", "t", "r", 'l', "gemLapis",
+				't', goldTri, 'r', "dustRedstone"));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
-				Triangulum.anglotronWood), "l", "t", "r", 'l', "dyeBlue", 't',
-				woodTri, 'r', "dustRedstone"));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
-				Triangulum.anglotronIron), "l", "t", "r", 'l', "dyeBlue", 't',
-				ironTri, 'r', "dustRedstone"));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
-				Triangulum.anglotronGold), "l", "t", "r", 'l', "dyeBlue", 't',
-				goldTri, 'r', "dustRedstone"));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
-				Triangulum.anglotronDiamond), "l", "t", "r", 'l', "dyeBlue",
-				't', diamTri, 'r', "dustRedstone"));
+				anglotronDiamond), "l", "t", "r", 'l', "gemLapis", 't', diamTri,
+				'r', "dustRedstone"));
 
-		GameRegistry.addRecipe(new ItemStack(Triangulum.octahedronWood, 2),
-				"ttt", "t t", "ttt", 't', woodTri);
-		GameRegistry.addRecipe(new ItemStack(Triangulum.octahedronIron, 2),
-				"ttt", "t t", "ttt", 't', ironTri);
-		GameRegistry.addRecipe(new ItemStack(Triangulum.octahedronGold, 2),
-				"ttt", "t t", "ttt", 't', goldTri);
-		GameRegistry.addRecipe(new ItemStack(Triangulum.octahedronDiamond, 2),
-				"ttt", "t t", "ttt", 't', diamTri);
+		GameRegistry.addRecipe(new ItemStack(octahedronWood, 2), "ttt", "t t",
+				"ttt", 't', woodTri);
+		GameRegistry.addRecipe(new ItemStack(octahedronIron, 2), "ttt", "t t",
+				"ttt", 't', ironTri);
+		GameRegistry.addRecipe(new ItemStack(octahedronGold, 2), "ttt", "t t",
+				"ttt", 't', goldTri);
+		GameRegistry.addRecipe(new ItemStack(octahedronDiamond, 2), "ttt",
+				"t t", "ttt", 't', diamTri);
+
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				new ItemStack(generatorCoal), " t ", "cfc", "crc", 't',
+				woodTri, 'f', Blocks.furnace, 'c', "cobblestone", 'r',
+				"dustRedstone"));
 	};
 
 }
