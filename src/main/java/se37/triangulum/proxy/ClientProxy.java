@@ -19,10 +19,6 @@ import se37.triangulum.particles.FXWisp;
 import se37.triangulum.particles.ParticleRenderDispatcher;
 
 public class ClientProxy extends CommonProxy {
-	public void registerClientHandlers() {
-		MinecraftForge.EVENT_BUS.register(new ParticleRenderDispatcher());
-	}
-
 	/**
 	 * Register all the items named in the given array with the renderer.
 	 * 
@@ -39,6 +35,11 @@ public class ClientProxy extends CommonProxy {
 					.register(i, 0, loc);
 		}
 	}
+	
+	public void registerClientHandlers() {
+		MinecraftForge.EVENT_BUS.register(new ParticleRenderDispatcher());
+	}
+
 
 	@Override
 	public void sparkleFX(World world, double x, double y, double z, float r,

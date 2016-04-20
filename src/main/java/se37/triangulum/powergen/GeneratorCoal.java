@@ -74,7 +74,7 @@ public class GeneratorCoal extends MachineBase {
 		{
 			TileEntity tileentity = worldIn.getTileEntity(pos);
 
-			if (tileentity instanceof TileEntityFurnace) {
+			if (tileentity instanceof GeneratorCoalLogic) {
 				InventoryHelper.dropInventoryItems(worldIn, pos,
 						(GeneratorCoalLogic) tileentity);
 			}

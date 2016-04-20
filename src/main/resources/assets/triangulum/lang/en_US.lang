@@ -13,3 +13,5 @@ tile.octahedron_iron.name=Iron Octahedron
 tile.octahedron_gold.name=Golden Octahedron
 tile.octahedron_diamond.name=Diamond Octahedron
 
+tile.generator_coal.name=Coal Generator
+

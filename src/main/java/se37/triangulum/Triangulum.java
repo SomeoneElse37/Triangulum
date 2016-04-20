@@ -191,8 +191,8 @@ public class Triangulum {
 				"t t", "ttt", 't', diamTri);
 
 		GameRegistry.addRecipe(new ShapedOreRecipe(
-				new ItemStack(generatorCoal), " t ", "cfc", "crc", 't',
-				woodTri, 'f', Blocks.furnace, 'c', "cobblestone", 'r',
+				new ItemStack(generatorCoal), " t ", "ifi", "iri", 't',
+				woodTri, 'f', Blocks.furnace, 'i', "ingotIron", 'r',
 				"dustRedstone"));
 	};
 

@@ -2,13 +2,20 @@ package se37.triangulum.powergen;
 
 import org.apache.logging.log4j.LogManager;
 
+import se37.triangulum.core.MachineBase;
+import se37.triangulum.core.Octahedron;
+import se37.triangulum.core.OctahedronLogic;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
 
 public class GeneratorCoalLogic extends GeneratorLogicBase implements
 		ISidedInventory {
@@ -90,31 +97,42 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-		return index == 0;
+		return index == 0 && TileEntityFurnace.getItemBurnTime(stack) > 0;
 	}
 
 	@Override
+	/**
+	 * 0: burnTime
+	 * 1: maxBurnTime
+	 */
 	public int getField(int id) {
-		// TODO Auto-generated method stub
+		switch (id) {
+		case 0:
+			return burnTime;
+		case 1:
+			return maxBurnTime;
+		}
 		return 0;
 	}
 
 	@Override
 	public void setField(int id, int value) {
-		// TODO Auto-generated method stub
-
+		switch (id) {
+		case 0:
+			burnTime = value;
+		case 1:
+			maxBurnTime = value;
+		}
 	}
 
 	@Override
 	public int getFieldCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 2;
 	}
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
-
+		fuelItem = null;
 	}
 
 	@Override
@@ -129,8 +147,7 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 
 	@Override
 	public ITextComponent getDisplayName() {
-		// TODO Auto-generated method stub
-		return null;
+		return new TextComponentString("Coal Generator at " + pos);
 	}
 
 	@Override
@@ -156,8 +173,7 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 	}
 
 	public void update() {
-		Block b = getBlockType();
-		if (!(b instanceof GeneratorCoal)) {
+		if (!(getBlockType() instanceof GeneratorCoal)) {
 			LogManager.getLogger().error(
 					"Broken Coal Generator at " + pos + "! Abort!");
 			return;
@@ -165,22 +181,30 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 
 		boolean dirtied = false;
 
-		if (running) {
-			burnTime--;
-			if (burnTime == 0) {
-				running = burnItem();
-			}
-			dirtied = true;
-		} else {
-			running = burnItem();
-			dirtied |= running;
-		}
+		IBlockState state = worldObj.getBlockState(pos);
+		MachineBase g = (MachineBase) blockType;
+		Block b = worldObj.getBlockState(pos.offset(g.getPowerFace(state)))
+				.getBlock();
+		TileEntity te = worldObj
+				.getTileEntity(pos.offset(g.getPowerFace(state)));
+		if (b instanceof Octahedron && te instanceof OctahedronLogic) {
+			Octahedron o = (Octahedron) b;
+			OctahedronLogic ol = (OctahedronLogic) te;
 
-		super.update();
-		
-		if(dirtied) {
+			if(burnTime == 0 && canBurn()) {
+				dirtied |= burnItem();
+			}
+			
+			if(burnTime > 0) {
+				update(o, ol);
+				burnTime--;
+				dirtied = true;
+			}
+		}
+		if (dirtied) {
 			this.markDirty();
 		}
+
 	}
 
 	/**
@@ -192,12 +216,47 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 	 * @return true if an item was burnt
 	 */
 	private boolean burnItem() {
-		burnTime = TileEntityFurnace.getItemBurnTime(fuelItem);
-		if (burnTime > 0) {
-			maxBurnTime = burnTime;
-			decrStackSize(0, 1);
+		int time = TileEntityFurnace.getItemBurnTime(fuelItem);
+		if (time > 0) {
+			burnTime = time;
+			maxBurnTime = time;
+			if (fuelItem.stackSize == 1
+					&& fuelItem.getItem().hasContainerItem(fuelItem)) {
+				fuelItem.setItem(fuelItem.getItem().getContainerItem());
+			} else {
+				decrStackSize(0, 1);
+			}
 			return true;
 		}
 		return false;
+	}
+
+	private boolean canBurn() {
+		return TileEntityFurnace.getItemBurnTime(fuelItem) > 0;
+	}
+	
+	@Override
+	public void writeToNBT(NBTTagCompound root) {
+		super.writeToNBT(root);
+		root.setInteger("BurnTime", burnTime);
+		root.setInteger("MaxBurnTime", maxBurnTime);
+
+		if (fuelItem != null) {
+			NBTTagCompound item = new NBTTagCompound();
+			fuelItem.writeToNBT(item);
+			root.setTag("FuelItem", item);
+		}
+	}
+
+	@Override
+	public void readFromNBT(NBTTagCompound root) {
+		super.readFromNBT(root);
+		burnTime = root.getInteger("BurnTime");
+		maxBurnTime = root.getInteger("MaxBurnTime");
+
+		if (root.hasKey("FuelItem")) {
+			fuelItem = ItemStack.loadItemStackFromNBT(root
+					.getCompoundTag("FuelItem"));
+		}
 	}
 }
