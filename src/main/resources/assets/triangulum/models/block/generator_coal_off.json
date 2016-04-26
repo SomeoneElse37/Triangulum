@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "triangulum:blocks/brick_furnace_top",
+        "front": "triangulum:blocks/generator_coal_front_off",
+        "side": "triangulum:blocks/brick_furnace_side",
+        "particle": "triangulum:blocks/brick_furnace_side"
+    }
+}

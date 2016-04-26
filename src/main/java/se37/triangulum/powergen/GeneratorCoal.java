@@ -4,6 +4,7 @@ import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -23,6 +24,7 @@ import se37.triangulum.core.MachineBase;
 
 public class GeneratorCoal extends MachineBase {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
+	public static final PropertyBool RUNNING = PropertyBool.create("burning");
 
 	public GeneratorCoal(Material materialIn) {
 		super(materialIn);
@@ -56,7 +58,7 @@ public class GeneratorCoal extends MachineBase {
 				facing = EnumFacing.WEST;
 			}
 
-			worldIn.setBlockState(pos, state.withProperty(FACING, facing), 2);
+			worldIn.setBlockState(pos, state.withProperty(FACING, facing).withProperty(RUNNING, false), 2);
 		}
 	}
 
@@ -93,14 +95,18 @@ public class GeneratorCoal extends MachineBase {
 			enumfacing = EnumFacing.NORTH;
 		}
 
-		return this.getDefaultState().withProperty(FACING, enumfacing);
+		return this.getDefaultState().withProperty(FACING, enumfacing).withProperty(RUNNING, meta <= 8);
 	}
 
 	/**
 	 * Convert the BlockState into the correct metadata value
 	 */
 	public int getMetaFromState(IBlockState state) {
-		return ((EnumFacing) state.getValue(FACING)).getIndex();
+		int meta = ((EnumFacing) state.getValue(FACING)).getIndex();
+		if(state.getValue(RUNNING)) {
+			meta += 8;
+		}
+		return meta;
 	}
 
 	/**
@@ -122,7 +128,7 @@ public class GeneratorCoal extends MachineBase {
 	}
 
 	protected BlockStateContainer createBlockState() {
-		return (new BlockStateContainer.Builder(this)).add(FACING).build();
+		return (new BlockStateContainer.Builder(this)).add(FACING).add(RUNNING).build();
 	}
 
 	@Override

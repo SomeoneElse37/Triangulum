@@ -2,6 +2,7 @@ package se37.triangulum.powergen;
 
 import org.apache.logging.log4j.LogManager;
 
+import se37.triangulum.Triangulum;
 import se37.triangulum.core.MachineBase;
 import se37.triangulum.core.Octahedron;
 import se37.triangulum.core.OctahedronLogic;
@@ -11,9 +12,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 
@@ -173,6 +178,11 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 	}
 
 	public void update() {
+
+		if (!worldObj.isRemote) {
+			System.out.println("Running: " + burnTime + "/" + maxBurnTime);
+		}
+		
 		if (!(getBlockType() instanceof GeneratorCoal)) {
 			LogManager.getLogger().error(
 					"Broken Coal Generator at " + pos + "! Abort!");
@@ -191,20 +201,38 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 			Octahedron o = (Octahedron) b;
 			OctahedronLogic ol = (OctahedronLogic) te;
 
-			if(burnTime == 0 && canBurn()) {
-				dirtied |= burnItem();
-			}
-			
-			if(burnTime > 0) {
+			boolean wasBurning = burnTime > 0;
+
+			if (burnTime > 0) {
 				update(o, ol);
 				burnTime--;
 				dirtied = true;
 			}
+
+			if (burnTime == 0 && canBurn()) {
+				if (burnItem()) {
+					dirtied = true;
+				}
+			}
+
+			if (wasBurning && burnTime == 0) {
+				worldObj.setBlockState(pos,
+						state.withProperty(GeneratorCoal.RUNNING, false), 2);
+				System.out.println("Turning off");
+			} else if (!wasBurning && burnTime > 0) {
+				worldObj.setBlockState(pos,
+						state.withProperty(GeneratorCoal.RUNNING, true), 2);
+				System.out.println("Turning on");
+			}
+
+		} else {
+			worldObj.setBlockState(pos,
+					state.withProperty(GeneratorCoal.RUNNING, false), 2);
 		}
+
 		if (dirtied) {
 			this.markDirty();
 		}
-
 	}
 
 	/**
@@ -226,15 +254,17 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 			} else {
 				decrStackSize(0, 1);
 			}
+			System.out.println("Burned item: " + burnTime + "/" + maxBurnTime);
 			return true;
 		}
+		System.out.println("Failed to burn an item");
 		return false;
 	}
 
 	private boolean canBurn() {
 		return TileEntityFurnace.getItemBurnTime(fuelItem) > 0;
 	}
-	
+
 	@Override
 	public void writeToNBT(NBTTagCompound root) {
 		super.writeToNBT(root);
@@ -258,5 +288,18 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 			fuelItem = ItemStack.loadItemStackFromNBT(root
 					.getCompoundTag("FuelItem"));
 		}
+	}
+
+	@Override
+	public Packet getDescriptionPacket() {
+		NBTTagCompound root = new NBTTagCompound();
+		writeToNBT(root);
+		return new SPacketUpdateTileEntity(pos, 0, root);
+	}
+
+	@Override
+	public void onDataPacket(NetworkManager manager,
+			SPacketUpdateTileEntity packet) {
+		readFromNBT(packet.getNbtCompound());
 	}
 }

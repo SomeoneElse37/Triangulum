@@ -1,7 +1,10 @@
 package se37.triangulum.core;
 
+import se37.triangulum.powergen.GeneratorCoal;
+import se37.triangulum.powergen.GeneratorCoalLogic;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -40,15 +43,20 @@ public class Anglotron extends Item {
 			World world, BlockPos pos, EnumHand hand, EnumFacing facing,
 			float hitX, float hitY, float hitZ) {
 		Block b = world.getBlockState(pos).getBlock();
+		TileEntity te = world.getTileEntity(pos);
 		if (b instanceof Octahedron) {
 			Octahedron o = (Octahedron) b;
-			OctahedronLogic ol = (OctahedronLogic) world.getTileEntity(pos);
+			OctahedronLogic ol = (OctahedronLogic) te;
 			if (o.getMaxVoltage() == this.maxVoltage) {
-				if(world.isRemote) {
-					player.addChatComponentMessage(new TextComponentString("--- Clientside Readings ---"));
+
+				if (world.isRemote) {
+					player.addChatComponentMessage(new TextComponentString(
+							"--- Clientside Readings ---"));
 				} else {
-					player.addChatComponentMessage(new TextComponentString("--- Serverside Readings ---"));
+					player.addChatComponentMessage(new TextComponentString(
+							"--- Serverside Readings ---"));
 				}
+
 				player.addChatComponentMessage(new TextComponentString(
 						"Voltage: " + ol.getVoltage() + " volts"));
 				player.addChatComponentMessage(new TextComponentString(
@@ -61,7 +69,8 @@ public class Anglotron extends Item {
 				player.addChatComponentMessage(new TextComponentString(
 						"Current: " + ol.getCurrent(facing) + " amperes"));
 				player.addChatComponentMessage(new TextComponentString(
-						"Power Transferred: " + ol.getCurrent(facing) * ol.getVoltage() + " watts"));
+						"Power Transferred: " + ol.getCurrent(facing)
+								* ol.getVoltage() + " watts"));
 				player.addChatComponentMessage(new TextComponentString(
 						"Power Dissipated: " + ol.getCurrent(facing)
 								* ol.getCurrent(facing) * o.getResistivity()
@@ -77,6 +86,30 @@ public class Anglotron extends Item {
 				ol.setVoltage(this.maxVoltage * 4);
 				return EnumActionResult.PASS;
 			}
+		} else if (b instanceof GeneratorCoal) {
+			GeneratorCoal g = (GeneratorCoal) b;
+			GeneratorCoalLogic gl = (GeneratorCoalLogic) te;
+
+			if (world.isRemote) {
+				player.addChatComponentMessage(new TextComponentString(
+						"--- Clientside Readings ---"));
+			} else {
+				player.addChatComponentMessage(new TextComponentString(
+						"--- Serverside Readings ---"));
+			}
+
+			if (gl.getStackInSlot(0) != null) {
+				player.addChatComponentMessage(new TextComponentString(
+						"Contents: " + gl.getStackInSlot(0)));
+			} else {
+				player.addChatComponentMessage(new TextComponentString(
+						"Contents: Nothing"));
+			}
+			
+			player.addChatComponentMessage(new TextComponentString(
+					"Burn time: " + gl.getField(0)));
+			player.addChatComponentMessage(new TextComponentString(
+					"Maximum Burn Time: " + gl.getField(1)));
 		}
 		return EnumActionResult.FAIL;
 	}
