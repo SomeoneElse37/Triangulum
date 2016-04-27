@@ -1,0 +1,33 @@
+The MIT License (MIT)
+
+Copyright (c) 2016 Someone Else 37
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+1. Distribution of the Software, in the form of sourcecode or compiled bytecode,
+modified or unmodified, or use of any part of the code contained within, is
+entirely permissible, as long as attribution is given to to Someone Else 37 
+(the "Owner") as the original author of the Software.
+
+2. The Software shall not be distributed as compiled bytecode along with a
+collection of other compiled Minecraft mods (a "modpack") unless all of those
+other mods are also being distributed in accordance with their own licenses.
+If this singular condition and the above attribution condition are met,
+the Software is free to distribute with no further permission needed. There
+is no need to notify the Owner, although he would appreciate a heads-up.
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
