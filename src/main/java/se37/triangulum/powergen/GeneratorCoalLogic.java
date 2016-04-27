@@ -32,7 +32,7 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 	public GeneratorCoalLogic() {
 		super();
 		fuelItem = null;
-		burnTime = 0;
+		burnTime = -5;
 		maxBurnTime = 0;
 	}
 
@@ -209,19 +209,23 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 				dirtied = true;
 			}
 
-			if (burnTime == 0 && canBurn()) {
+			if (burnTime <= 0 && canBurn()) {
 				if (burnItem()) {
 					dirtied = true;
 				}
 			}
 
-			if (wasBurning && burnTime == 0) {
+			if (wasBurning && burnTime <= 0) {
 				worldObj.setBlockState(pos,
 						state.withProperty(GeneratorCoal.RUNNING, false), 2);
+				this.validate();
+				worldObj.setTileEntity(pos, this);
 				System.out.println("Turning off");
 			} else if (!wasBurning && burnTime > 0) {
 				worldObj.setBlockState(pos,
 						state.withProperty(GeneratorCoal.RUNNING, true), 2);
+				this.validate();
+				worldObj.setTileEntity(pos, this);
 				System.out.println("Turning on");
 			}
 
