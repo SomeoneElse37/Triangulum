@@ -178,11 +178,6 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 	}
 
 	public void update() {
-
-		if (!worldObj.isRemote) {
-			System.out.println("Running: " + burnTime + "/" + maxBurnTime);
-		}
-		
 		if (!(getBlockType() instanceof GeneratorCoal)) {
 			LogManager.getLogger().error(
 					"Broken Coal Generator at " + pos + "! Abort!");
@@ -220,13 +215,11 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 						state.withProperty(GeneratorCoal.RUNNING, false), 2);
 				this.validate();
 				worldObj.setTileEntity(pos, this);
-				System.out.println("Turning off");
 			} else if (!wasBurning && burnTime > 0) {
 				worldObj.setBlockState(pos,
 						state.withProperty(GeneratorCoal.RUNNING, true), 2);
 				this.validate();
 				worldObj.setTileEntity(pos, this);
-				System.out.println("Turning on");
 			}
 
 		} else {
@@ -258,10 +251,8 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 			} else {
 				decrStackSize(0, 1);
 			}
-			System.out.println("Burned item: " + burnTime + "/" + maxBurnTime);
 			return true;
 		}
-		System.out.println("Failed to burn an item");
 		return false;
 	}
 

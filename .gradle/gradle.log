@@ -25,7 +25,7 @@
 :compileApiJava UP-TO-DATE
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
-:sourceMainJava
+:sourceMainJava UP-TO-DATE
 :compileJavawarning: [options] bootstrap class path not set in conjunction with -source 1.6
 Note: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
@@ -39,136 +39,131 @@ Note: Recompile with -Xlint:unchecked for details.
 :extractNatives SKIPPED
 :getAssetIndex UP-TO-DATE
 :getAssets
-Current status: 1045/1049   99%
 :makeStart SKIPPED
 :runClient
-[20:01:11] [main/INFO]: Extra: []
-[20:01:11] [main/INFO]: Running with arguments: [--userProperties, {}, --assetsDir, /Users/aaron/.gradle/caches/minecraft/assets, --assetIndex, 1.9, --accessToken{REDACTED}, --version, 1.9, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
-[20:01:11] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[20:01:11] [main/INFO]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[20:01:11] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
-[20:01:11] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
-[20:01:11] [main/INFO]: Forge Mod Loader version 12.16.0.1865 for Minecraft 1.9 loading
-[20:01:11] [main/INFO]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_77, running on Mac OS X:x86_64:10.11.4, installed at /Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre
-[20:01:11] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
-[20:01:11] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
-[20:01:11] [main/INFO]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
-[20:01:11] [main/INFO]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
-[20:01:11] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[20:01:11] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[20:01:11] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[20:01:11] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[20:01:11] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[20:01:11] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[20:01:11] [main/ERROR]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
-[20:01:11] [main/ERROR]: FML appears to be missing any signature data. This is not a good thing
-[20:01:11] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[20:01:11] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[20:01:12] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[20:01:12] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
-[20:01:12] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
-[20:01:12] [main/INFO]: Launching wrapped minecraft {net.minecraft.client.main.Main}
-[20:01:12] [Client thread/INFO]: Setting user: Player641
-[20:01:14] [Client thread/INFO]: LWJGL Version: 2.9.2
-[20:01:15] [Client thread/INFO]: MinecraftForge v12.16.0.1865 Initialized
-[20:01:15] [Client thread/INFO]: Replaced 207 ore recipes
-[20:01:15] [Client thread/INFO]: Found 0 mods from the command line. Injecting into mod discoverer
-[20:01:15] [Client thread/INFO]: Searching /Users/aaron/Games/Minecraft/Modding/Forge1.9-1816/run/mods for mods
-[20:01:16] [Client thread/INFO]: Forge Mod Loader has identified 4 mods to load
-[20:01:17] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, triangulum] at CLIENT
-[20:01:17] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, triangulum] at SERVER
-[20:01:17] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Triangulum
-[20:01:17] [Client thread/INFO]: Processing ObjectHolder annotations
-[20:01:17] [Client thread/INFO]: Found 418 ObjectHolder annotations
-[20:01:17] [Client thread/INFO]: Identifying ItemStackHolder annotations
-[20:01:17] [Client thread/INFO]: Found 0 ItemStackHolder annotations
-[20:01:17] [Client thread/INFO]: Configured a dormant chunk cache size of 0
-[20:01:17] [Forge Version Check/INFO]: [Forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
-[20:01:17] [Client thread/INFO]: Applying holder lookups
-[20:01:17] [Client thread/INFO]: Holder lookups applied
-[20:01:17] [Client thread/INFO]: Injecting itemstacks
-[20:01:17] [Client thread/INFO]: Itemstack injection complete
-[20:01:17] [Forge Version Check/INFO]: [Forge] Found status: BETA Target: null
-[20:01:18] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[20:01:18] [Thread-6/INFO]: Initializing LWJGL OpenAL
-[20:01:18] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-2016-04-26 20:01:18.516 java[5794:677236] 20:01:18.516 WARNING:  140: This application, or a library it uses, is using the deprecated Carbon Component Manager for hosting Audio Units. Support for this will be removed in a future release. Also, this makes the host incompatible with version 3 audio units. Please transition to the API's in AudioComponent.h.
-[20:01:18] [Thread-6/INFO]: OpenAL initialized.
-[20:01:18] [Sound Library Loader/INFO]: Sound engine started
-[20:01:19] [Client thread/INFO]: Max texture size: 16384
-[20:01:19] [Client thread/INFO]: Created: 16x16 textures-atlas
-[20:01:21] [Client thread/INFO]: Injecting itemstacks
-[20:01:21] [Client thread/INFO]: Itemstack injection complete
-[20:01:21] [Client thread/INFO]: Forge Mod Loader has successfully loaded 4 mods
-[20:01:21] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Triangulum
-[20:01:21] [Client thread/INFO]: SoundSystem shutting down...
-[20:01:21] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[20:01:21] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[20:01:22] [Thread-8/INFO]: Initializing LWJGL OpenAL
-[20:01:22] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[20:01:22] [Thread-8/INFO]: OpenAL initialized.
-[20:01:22] [Sound Library Loader/INFO]: Sound engine started
-[20:01:22] [Client thread/INFO]: Max texture size: 16384
-[20:01:22] [Client thread/INFO]: Created: 1024x512 textures-atlas
-[20:01:24] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[20:01:31] [Server thread/INFO]: Starting integrated minecraft server version 1.9
-[20:01:31] [Server thread/INFO]: Generating keypair
-[20:01:31] [Server thread/INFO]: Injecting existing block and item data into this server instance
-[20:01:32] [Server thread/INFO]: Applying holder lookups
-[20:01:32] [Server thread/INFO]: Holder lookups applied
-[20:01:32] [Server thread/INFO]: Loading dimension 0 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@459c84f2)
-[20:01:32] [Server thread/INFO]: Loading dimension 1 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@459c84f2)
-[20:01:32] [Server thread/INFO]: Loading dimension -1 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@459c84f2)
-[20:01:32] [Server thread/INFO]: Preparing start region for level 0
-[20:01:33] [Server thread/INFO]: Preparing spawn area: 66%
-[20:01:33] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:33] [Server thread/INFO]: Changing view distance to 12, from 10
-[20:01:33] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:33] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:33] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:33] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:33] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:33] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:33] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:33] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:33] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:33] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Netty Local Client IO #0/INFO]: Server protocol version 2
-[20:01:34] [Netty Server IO #1/INFO]: Client protocol version 2
-[20:01:34] [Netty Server IO #1/INFO]: Client attempting to join with 4 mods : triangulum@0.0.0,FML@8.0.99.99,Forge@12.16.0.1865,mcp@9.19
-[20:01:34] [Netty Local Client IO #0/INFO]: [Netty Local Client IO #0] Client side modded connection established
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [Server thread] Server side modded connection established
-[20:01:34] [Server thread/INFO]: Player641[local:E:c2d86882] logged in with entity id 115 at (-150.86471954254097, 66.0, 179.8322568988338)
-[20:01:34] [Server thread/INFO]: Player641 joined the game
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:34] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:35] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:35] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:35] [Server thread/INFO]: Saving and pausing game...
-[20:01:35] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
-[20:01:35] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
-[20:01:35] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
-[20:01:35] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@616cf4cb[id=34c6f761-a0d4-3d62-b5ee-df15e4530215,name=Player641,properties={},legacy=false]
+[20:25:53] [main/INFO]: Extra: []
+[20:25:53] [main/INFO]: Running with arguments: [--userProperties, {}, --assetsDir, /Users/aaron/.gradle/caches/minecraft/assets, --assetIndex, 1.9, --accessToken{REDACTED}, --version, 1.9, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[20:25:53] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[20:25:53] [main/INFO]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[20:25:53] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[20:25:53] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
+[20:25:53] [main/INFO]: Forge Mod Loader version 12.16.0.1865 for Minecraft 1.9 loading
+[20:25:53] [main/INFO]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_77, running on Mac OS X:x86_64:10.11.4, installed at /Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre
+[20:25:53] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[20:25:53] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[20:25:53] [main/INFO]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
+[20:25:53] [main/INFO]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[20:25:53] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:25:53] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[20:25:53] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[20:25:53] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:25:53] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:25:53] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:25:53] [main/ERROR]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
+[20:25:54] [main/ERROR]: FML appears to be missing any signature data. This is not a good thing
+[20:25:54] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:25:54] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[20:25:54] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[20:25:54] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[20:25:54] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[20:25:54] [main/INFO]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[20:25:55] [Client thread/INFO]: Setting user: Player837
+[20:25:57] [Client thread/INFO]: LWJGL Version: 2.9.2
+[20:25:58] [Client thread/INFO]: MinecraftForge v12.16.0.1865 Initialized
+[20:25:58] [Client thread/INFO]: Replaced 207 ore recipes
+[20:25:58] [Client thread/INFO]: Found 0 mods from the command line. Injecting into mod discoverer
+[20:25:58] [Client thread/INFO]: Searching /Users/aaron/Games/Minecraft/Modding/Forge1.9-1816/run/mods for mods
+[20:25:59] [Client thread/INFO]: Forge Mod Loader has identified 4 mods to load
+[20:25:59] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, triangulum] at CLIENT
+[20:25:59] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, triangulum] at SERVER
+[20:25:59] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Triangulum
+[20:25:59] [Client thread/INFO]: Processing ObjectHolder annotations
+[20:26:00] [Client thread/INFO]: Found 418 ObjectHolder annotations
+[20:26:00] [Client thread/INFO]: Identifying ItemStackHolder annotations
+[20:26:00] [Client thread/INFO]: Found 0 ItemStackHolder annotations
+[20:26:00] [Client thread/INFO]: Configured a dormant chunk cache size of 0
+[20:26:00] [Forge Version Check/INFO]: [Forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[20:26:00] [Client thread/INFO]: Applying holder lookups
+[20:26:00] [Client thread/INFO]: Holder lookups applied
+[20:26:00] [Client thread/INFO]: Injecting itemstacks
+[20:26:00] [Client thread/INFO]: Itemstack injection complete
+[20:26:00] [Forge Version Check/INFO]: [Forge] Found status: BETA Target: null
+[20:26:00] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[20:26:01] [Thread-6/INFO]: Initializing LWJGL OpenAL
+[20:26:01] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+2016-04-26 20:26:01.106 java[5882:688176] 20:26:01.106 WARNING:  140: This application, or a library it uses, is using the deprecated Carbon Component Manager for hosting Audio Units. Support for this will be removed in a future release. Also, this makes the host incompatible with version 3 audio units. Please transition to the API's in AudioComponent.h.
+[20:26:01] [Thread-6/INFO]: OpenAL initialized.
+[20:26:01] [Sound Library Loader/INFO]: Sound engine started
+[20:26:02] [Client thread/INFO]: Max texture size: 16384
+[20:26:02] [Client thread/INFO]: Created: 16x16 textures-atlas
+[20:26:03] [Client thread/INFO]: Injecting itemstacks
+[20:26:03] [Client thread/INFO]: Itemstack injection complete
+[20:26:03] [Client thread/INFO]: Forge Mod Loader has successfully loaded 4 mods
+[20:26:03] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Triangulum
+[20:26:04] [Client thread/INFO]: SoundSystem shutting down...
+[20:26:04] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[20:26:04] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[20:26:04] [Thread-8/INFO]: Initializing LWJGL OpenAL
+[20:26:04] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[20:26:04] [Thread-8/INFO]: OpenAL initialized.
+[20:26:05] [Sound Library Loader/INFO]: Sound engine started
+[20:26:05] [Client thread/INFO]: Max texture size: 16384
+[20:26:05] [Client thread/INFO]: Created: 1024x512 textures-atlas
+[20:26:06] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[20:26:10] [Server thread/INFO]: Starting integrated minecraft server version 1.9
+[20:26:10] [Server thread/INFO]: Generating keypair
+[20:26:10] [Server thread/INFO]: Injecting existing block and item data into this server instance
+[20:26:10] [Server thread/INFO]: Applying holder lookups
+[20:26:10] [Server thread/INFO]: Holder lookups applied
+[20:26:10] [Server thread/INFO]: Loading dimension 0 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@602b584b)
+[20:26:10] [Server thread/INFO]: Loading dimension 1 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@602b584b)
+[20:26:10] [Server thread/INFO]: Loading dimension -1 (Dev Testing) (net.minecraft.server.integrated.IntegratedServer@602b584b)
+[20:26:10] [Server thread/INFO]: Preparing start region for level 0
+[20:26:11] [Server thread/INFO]: Preparing spawn area: 92%
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 65/100
+[20:26:12] [Server thread/INFO]: Changing view distance to 12, from 10
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 64/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 63/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 62/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 61/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 60/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 59/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 58/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 57/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 56/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 55/100
+[20:26:12] [Netty Local Client IO #0/INFO]: Server protocol version 2
+[20:26:12] [Netty Server IO #1/INFO]: Client protocol version 2
+[20:26:12] [Netty Server IO #1/INFO]: Client attempting to join with 4 mods : triangulum@0.0.0,FML@8.0.99.99,Forge@12.16.0.1865,mcp@9.19
+[20:26:12] [Netty Local Client IO #0/INFO]: [Netty Local Client IO #0] Client side modded connection established
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 54/100
+[20:26:12] [Server thread/INFO]: [Server thread] Server side modded connection established
+[20:26:12] [Server thread/INFO]: Player837[local:E:a693b9dc] logged in with entity id 115 at (-150.86471954254097, 66.0, 179.8322568988338)
+[20:26:12] [Server thread/INFO]: Player837 joined the game
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 53/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 52/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 51/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 50/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 49/100
+[20:26:12] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 48/100
+[20:26:13] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 47/100
+[20:26:13] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 46/100
+[20:26:13] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 45/100
+[20:26:13] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 44/100
+[20:26:13] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 43/100
+[20:26:13] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 42/100
+[20:26:13] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 41/100
+[20:26:13] [Server thread/INFO]: Saving and pausing game...
+[20:26:13] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
+[20:26:13] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
+[20:26:13] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 40/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 39/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 38/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 37/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 36/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 35/100
+[20:26:14] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@7fd4dc7c[id=74c27658-bdbf-3735-92e3-d4cbb89f0350,name=Player837,properties={},legacy=false]
 com.mojang.authlib.exceptions.AuthenticationException: The client has sent too many requests within a certain amount of time
 	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:65) ~[YggdrasilAuthenticationService.class:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:175) [YggdrasilMinecraftSessionService.class:?]
@@ -190,486 +185,105 @@ com.mojang.authlib.exceptions.AuthenticationException: The client has sent too m
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_77]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_77]
 	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_77]
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:36] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:37] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:38] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:39] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:40] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: -5/0
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:burnItem:261]: Burned item: 100/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:229]: Turning on
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 100/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 99/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 98/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 97/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 96/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 95/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 94/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 93/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 92/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 91/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 90/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 89/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 88/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 87/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 86/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 85/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 84/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 83/100
-[20:01:41] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 82/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 81/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 80/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 79/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 78/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 77/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 76/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 75/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 74/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 73/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 72/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 71/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 70/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 69/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 68/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 67/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 66/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 65/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 64/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 63/100
-[20:01:42] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 62/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 61/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 60/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 59/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 58/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 57/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 56/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 55/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 54/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 53/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 52/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 51/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 50/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 49/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 48/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 47/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 46/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 45/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 44/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 43/100
-[20:01:43] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 42/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 41/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 40/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 39/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 38/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 37/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 36/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 35/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 34/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 33/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 32/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 31/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 30/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 29/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 28/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 27/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 26/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 25/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 24/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 23/100
-[20:01:44] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 22/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 21/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 20/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 19/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 18/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 17/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 16/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 15/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 14/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 13/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 12/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 11/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 10/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 9/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 8/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 7/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 6/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 5/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 4/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 3/100
-[20:01:45] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 2/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 1/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:223]: Turning off
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:46] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:47] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:burnItem:261]: Burned item: 100/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:229]: Turning on
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 100/100
-[20:01:48] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 99/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 98/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 97/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 96/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 95/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 94/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 93/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 92/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 91/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 90/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 89/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 88/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 87/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 86/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 85/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 84/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 83/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 82/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 81/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 80/100
-[20:01:49] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 79/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 78/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 77/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 76/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 75/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 74/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 73/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 72/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 71/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 70/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 69/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 68/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 67/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 66/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 65/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 64/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 63/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 62/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 61/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 60/100
-[20:01:50] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 59/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 58/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 57/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 56/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 55/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 54/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 53/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 52/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 51/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 50/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 49/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 48/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 47/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 46/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 45/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 44/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 43/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 42/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 41/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 40/100
-[20:01:51] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 39/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 38/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 37/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 36/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 35/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 34/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 33/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 32/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 31/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 30/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 29/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 28/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 27/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 26/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 25/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 24/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 23/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 22/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 21/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 20/100
-[20:01:52] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 19/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 18/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 17/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 16/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 15/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 14/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 13/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 12/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 11/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 10/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 9/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 8/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 7/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 6/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 5/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 4/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 3/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 2/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 1/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:223]: Turning off
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:53] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:54] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:55] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:burnItem:261]: Burned item: 100/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:229]: Turning on
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 100/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 99/100
-[20:01:56] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 98/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 97/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 96/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 95/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 94/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 93/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 92/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 91/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 90/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 89/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 88/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 87/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 86/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 85/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 84/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 83/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 82/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 81/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 80/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 79/100
-[20:01:57] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 78/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 77/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 76/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 75/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 74/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 73/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 72/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 71/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 70/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 69/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 68/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 67/100
-[20:01:58] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 66/100
-[20:01:58] [Server thread/INFO]: Saving and pausing game...
-[20:01:58] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
-[20:01:58] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
-[20:01:58] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
-[20:02:36] [Server thread/INFO]: Stopping server
-[20:02:36] [Server thread/INFO]: Saving players
-[20:02:36] [Server thread/INFO]: Saving worlds
-[20:02:36] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
-[20:02:36] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
-[20:02:36] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
-[20:02:36] [Server thread/INFO]: Unloading dimension 0
-[20:02:36] [Server thread/INFO]: Unloading dimension -1
-[20:02:36] [Server thread/INFO]: Unloading dimension 1
-[20:02:36] [Server thread/INFO]: Applying holder lookups
-[20:02:36] [Server thread/INFO]: Holder lookups applied
-[20:02:38] [Client thread/INFO]: Stopping!
-[20:02:38] [Client thread/INFO]: SoundSystem shutting down...
-AL lib: (WW) FreeDevice: (0x7fa944282000) Deleting 9 Buffer(s)
-[20:02:38] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 34/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 33/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 32/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 31/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 30/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 29/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 28/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 27/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 26/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 25/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 24/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 23/100
+[20:26:14] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 22/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 21/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 20/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 19/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 18/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 17/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 16/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 15/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 14/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 13/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 12/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 11/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 10/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 9/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 8/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 7/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 6/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 5/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 4/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 3/100
+[20:26:15] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 2/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 1/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:223]: Turning off
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:16] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:17] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:18] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:18] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:18] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:18] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:18] [Server thread/INFO]: [se37.triangulum.powergen.GeneratorCoalLogic:update:183]: Running: 0/100
+[20:26:18] [Server thread/INFO]: Saving and pausing game...
+[20:26:18] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
+[20:26:18] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
+[20:26:18] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
+[20:26:25] [Server thread/INFO]: Stopping server
+[20:26:25] [Server thread/INFO]: Saving players
+[20:26:25] [Server thread/INFO]: Saving worlds
+[20:26:25] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Overworld
+[20:26:25] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/Nether
+[20:26:25] [Server thread/INFO]: Saving chunks for level 'Dev Testing'/The End
+[20:26:25] [Server thread/INFO]: Unloading dimension 0
+[20:26:25] [Server thread/INFO]: Unloading dimension -1
+[20:26:25] [Server thread/INFO]: Unloading dimension 1
+[20:26:25] [Server thread/INFO]: Applying holder lookups
+[20:26:25] [Server thread/INFO]: Holder lookups applied
+[20:26:27] [Client thread/INFO]: Stopping!
+[20:26:27] [Client thread/INFO]: SoundSystem shutting down...
+AL lib: (WW) FreeDevice: (0x7fa2d549be00) Deleting 6 Buffer(s)
+[20:26:27] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
 
 BUILD SUCCESSFUL
 
-Total time: 1 mins 44.727 secs
+Total time: 53.291 secs
