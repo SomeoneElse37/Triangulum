@@ -1,8 +1,11 @@
 package se37.triangulum.core;
 
+import java.util.Arrays;
+
 import org.apache.logging.log4j.LogManager;
 
 import se37.triangulum.Triangulum;
+import se37.triangulum.packets.SPacketNetUpdate;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagFloat;
@@ -15,6 +18,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
 
 public class OctahedronLogic extends TileEntity implements ITickable {
 
@@ -39,6 +43,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 	 */
 	private boolean[] loadedDirs;
 	private float nextVoltage;
+	private int counter;
 
 	public OctahedronLogic() {
 		super();
@@ -47,6 +52,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 		currents = new float[EnumFacing.VALUES.length];
 		loadedDirs = new boolean[EnumFacing.HORIZONTALS.length];
 		nextVoltage = voltage;
+		counter = pos.getX() + pos.getY() << 2 + pos.getZ() << 4;
 	}
 
 	public float getVoltage() {
@@ -111,13 +117,10 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 		if (getBlockType() instanceof Octahedron) {
 			t = (Octahedron) blockType;
 		} else {
-			LogManager
-					.getLogger()
-					.error(blockType
-							+ " at "
-							+ pos
-							+ "is not an Octahedron! Scan likely to fail catastrophically!");
-			// Is this when I invalidate the TE?
+			LogManager.getLogger().error(
+					blockType + " at " + pos
+							+ "is not an Octahedron! Scan aborted!");
+			return dirtied;
 		}
 
 		for (EnumFacing e : EnumFacing.VALUES) {
@@ -166,7 +169,7 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 				}
 			}
 			// If the scan ran out of range or hit an obstacle (NYI), but didn't
-			// last time
+			// do so last time
 			if (!connected && connections[e.getIndex()] != 0) {
 				connections[e.getIndex()] = 0;
 				setCurrent(e, 0);
@@ -180,20 +183,26 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 	public void update() {
 		boolean dirtied = false;
 
-		if ((worldObj.getWorldTime() + pos.getX() + pos.getY() << 2 + pos
-				.getZ() << 4) % (20 * 4) == 0) {
+		counter++;
+		if (counter >= 20 * 4) {
+			counter = 0;
 			dirtied |= scan();
-			// worldObj.mark
+			if (!worldObj.isRemote) {
+				Triangulum.networkWrapper.sendToAllAround(new SPacketNetUpdate(
+						voltage, currents, pos), new TargetPoint(worldObj.provider.getDimension(),
+						pos.getX(), pos.getY(), pos.getZ(), 20));
+			}
 		}
 
+		
 		Octahedron t = null;
 		if (getBlockType() instanceof Octahedron) {
 			t = (Octahedron) blockType;
 		} else {
 			LogManager.getLogger().error(
 					blockType + " at " + pos
-							+ " is not an Octahedron! Stuff's broke!");
-			// This will probably lead to a crash later on.
+							+ " is not an Octahedron! Update aborted!");
+			return;
 		}
 
 		nextVoltage = voltage;
@@ -443,5 +452,10 @@ public class OctahedronLogic extends TileEntity implements ITickable {
 	public void onDataPacket(NetworkManager manager,
 			SPacketUpdateTileEntity packet) {
 		readFromNBT(packet.getNbtCompound());
+	}
+
+	public void onDataPacket(SPacketNetUpdate message) {
+		voltage = message.getVoltage();
+		currents = Arrays.copyOf(message.getCurrents(), 6);
 	}
 }

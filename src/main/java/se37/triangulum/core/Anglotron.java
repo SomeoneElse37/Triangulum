@@ -1,5 +1,7 @@
 package se37.triangulum.core;
 
+import se37.triangulum.machine.BrickFurnace;
+import se37.triangulum.machine.BrickFurnaceLogic;
 import se37.triangulum.powergen.GeneratorCoal;
 import se37.triangulum.powergen.GeneratorCoalLogic;
 import net.minecraft.item.Item;
@@ -110,6 +112,37 @@ public class Anglotron extends Item {
 					"Burn time: " + gl.getField(0)));
 			player.addChatComponentMessage(new TextComponentString(
 					"Maximum Burn Time: " + gl.getField(1)));
+		} else if (b instanceof BrickFurnace) {
+			BrickFurnace g = (BrickFurnace) b;
+			BrickFurnaceLogic gl = (BrickFurnaceLogic) te;
+
+			if (world.isRemote) {
+				player.addChatComponentMessage(new TextComponentString(
+						"--- Clientside Readings ---"));
+			} else {
+				player.addChatComponentMessage(new TextComponentString(
+						"--- Serverside Readings ---"));
+			}
+
+			String s1 = null;
+			String s2 = null;
+			
+			if (gl.getStackInSlot(0) != null) {
+				s1 = gl.getStackInSlot(0).toString();
+			} else {
+				s1 = "nothing";
+			}
+			
+			if (gl.getStackInSlot(1) != null) {
+				s2 = gl.getStackInSlot(1).toString();
+			} else {
+				s2 = "nothing";
+			}
+			
+			player.addChatComponentMessage(new TextComponentString("Smelting " + s1 + " into " + s2));
+			
+			player.addChatComponentMessage(new TextComponentString(
+					"Progress: " + Float.intBitsToFloat(gl.getField(0))));
 		}
 		return EnumActionResult.FAIL;
 	}

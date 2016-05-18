@@ -20,7 +20,7 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import se37.triangulum.core.MachineBase;
+import se37.triangulum.machine.MachineBase;
 
 public class GeneratorCoal extends MachineBase {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;

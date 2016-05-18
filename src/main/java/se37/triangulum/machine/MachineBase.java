@@ -1,4 +1,4 @@
-package se37.triangulum.core;
+package se37.triangulum.machine;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.MapColor;

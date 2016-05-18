@@ -1,11 +1,18 @@
 package se37.triangulum;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.ByteBufAllocator;
+import io.netty.buffer.UnpooledByteBufAllocator;
+
 import java.util.LinkedList;
 import java.util.List;
 
 import se37.triangulum.core.Anglotron;
 import se37.triangulum.core.Octahedron;
 import se37.triangulum.core.OctahedronLogic;
+import se37.triangulum.machine.BrickFurnace;
+import se37.triangulum.machine.BrickFurnaceLogic;
+import se37.triangulum.packets.SPacketNetUpdate;
 import se37.triangulum.powergen.GeneratorCoal;
 import se37.triangulum.powergen.GeneratorCoalLogic;
 import se37.triangulum.proxy.CommonProxy;
@@ -19,12 +26,15 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameData;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -44,13 +54,15 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 public class Triangulum {
 
 	public static final String MODID = "triangulum";
-	public static final String VERSION = "0.0.0";
+	public static final String VERSION = "1.0.0";
 
 	@Instance(MODID)
 	public static Triangulum instance;
 
 	@SidedProxy(serverSide = "se37.triangulum.proxy.CommonProxy", clientSide = "se37.triangulum.proxy.ClientProxy")
 	public static CommonProxy proxy;
+
+	public static SimpleNetworkWrapper networkWrapper;
 
 	private static Item triangleWood;
 	private static Item triangleIron;
@@ -68,6 +80,8 @@ public class Triangulum {
 	private static Block octahedronDiamond;
 
 	private static Block generatorCoal;
+
+	private static Block brickFurnace;
 
 	private static List<String> itemNames;
 
@@ -96,7 +110,7 @@ public class Triangulum {
 	 *            the item to register
 	 * @param name
 	 *            the name to give it
-	 * @return the item, for convenience
+	 * @return the block, for convenience
 	 */
 	private static Block registerBlock(Block b, String name) {
 		b.setUnlocalizedName(name);
@@ -140,12 +154,35 @@ public class Triangulum {
 		generatorCoal = registerBlock(new GeneratorCoal(Material.rock),
 				"generator_coal");
 
+		brickFurnace = registerBlock(new BrickFurnace(Material.rock),
+				"furnace_brick");
+
 		GameRegistry.registerTileEntity(OctahedronLogic.class,
 				"octahedronLogic");
 		GameRegistry.registerTileEntity(GeneratorCoalLogic.class,
 				"generatorCoalLogic");
+		GameRegistry.registerTileEntity(BrickFurnaceLogic.class,
+				"brickFurnaceLogic");
 
 		proxy.registerClientHandlers();
+
+		networkWrapper = NetworkRegistry.INSTANCE
+				.newSimpleChannel("TriangulumNetWrapper");
+		networkWrapper.registerMessage(SPacketNetUpdate.Handler.class,
+				SPacketNetUpdate.class, 0, Side.CLIENT);
+
+		// Debug
+		ByteBufAllocator alloc = new UnpooledByteBufAllocator(true);
+		ByteBuf buf = alloc.buffer();
+
+		SPacketNetUpdate p1 = new SPacketNetUpdate(1, new float[] { 2, 3, 4, 5,
+				6, 7, 8 }, new BlockPos(9, 10, 11));
+		p1.toBytes(buf);
+		System.out.println(p1);
+
+		SPacketNetUpdate p2 = new SPacketNetUpdate();
+		p2.fromBytes(buf);
+		System.out.println(p2);
 	};
 
 	@EventHandler
@@ -178,8 +215,8 @@ public class Triangulum {
 				new ItemStack(anglotronGold), "l", "t", "r", 'l', "gemLapis",
 				't', goldTri, 'r', "dustRedstone"));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
-				anglotronDiamond), "l", "t", "r", 'l', "gemLapis", 't', diamTri,
-				'r', "dustRedstone"));
+				anglotronDiamond), "l", "t", "r", 'l', "gemLapis", 't',
+				diamTri, 'r', "dustRedstone"));
 
 		GameRegistry.addRecipe(new ItemStack(octahedronWood, 2), "ttt", "t t",
 				"ttt", 't', woodTri);
@@ -194,6 +231,9 @@ public class Triangulum {
 				new ItemStack(generatorCoal), " t ", "ifi", "iri", 't',
 				woodTri, 'f', Blocks.furnace, 'i', "ingotBrick", 'r',
 				"dustRedstone"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(brickFurnace),
+				" t ", "ifi", "ili", 't', woodTri, 'f', Blocks.furnace, 'i',
+				"ingotBrick", 'l', "gemLapis"));
 	};
 
 }

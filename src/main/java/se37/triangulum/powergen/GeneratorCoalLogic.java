@@ -3,9 +3,9 @@ package se37.triangulum.powergen;
 import org.apache.logging.log4j.LogManager;
 
 import se37.triangulum.Triangulum;
-import se37.triangulum.core.MachineBase;
 import se37.triangulum.core.Octahedron;
 import se37.triangulum.core.OctahedronLogic;
+import se37.triangulum.machine.MachineBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -27,7 +27,7 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 	private ItemStack fuelItem;
 	private int burnTime;
 	private int maxBurnTime;
-	public static final float POWER = 1 / 16F;
+	public static final float POWER = 1 / 4F;
 
 	public GeneratorCoalLogic() {
 		super();
@@ -225,6 +225,8 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 		} else {
 			worldObj.setBlockState(pos,
 					state.withProperty(GeneratorCoal.RUNNING, false), 2);
+			this.validate();
+			worldObj.setTileEntity(pos, this);
 		}
 
 		if (dirtied) {
@@ -283,18 +285,5 @@ public class GeneratorCoalLogic extends GeneratorLogicBase implements
 			fuelItem = ItemStack.loadItemStackFromNBT(root
 					.getCompoundTag("FuelItem"));
 		}
-	}
-
-	@Override
-	public Packet getDescriptionPacket() {
-		NBTTagCompound root = new NBTTagCompound();
-		writeToNBT(root);
-		return new SPacketUpdateTileEntity(pos, 0, root);
-	}
-
-	@Override
-	public void onDataPacket(NetworkManager manager,
-			SPacketUpdateTileEntity packet) {
-		readFromNBT(packet.getNbtCompound());
 	}
 }

@@ -1,10 +1,9 @@
 package se37.triangulum.machine;
 
 import net.minecraft.block.BlockHorizontal;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -18,12 +17,11 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import se37.triangulum.core.MachineBase;
-import se37.triangulum.powergen.GeneratorCoalLogic;
 
 public class BrickFurnace extends MachineBase {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
-	public static final PropertyBool RUNNING = PropertyBool.create("burning");
+	public static final PropertyInteger TEMPERATURE = PropertyInteger.create(
+			"temperature", 0, 3);
 
 	public BrickFurnace(Material materialIn) {
 		super(materialIn);
@@ -31,8 +29,9 @@ public class BrickFurnace extends MachineBase {
 		setHardness(2.0F);
 	}
 
+	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
-		this.setDefaultFacing(worldIn, pos, state);
+		setDefaultFacing(worldIn, pos, state);
 	}
 
 	private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state) {
@@ -41,7 +40,7 @@ public class BrickFurnace extends MachineBase {
 			IBlockState southState = worldIn.getBlockState(pos.south());
 			IBlockState westState = worldIn.getBlockState(pos.west());
 			IBlockState eastState = worldIn.getBlockState(pos.east());
-			EnumFacing facing = (EnumFacing) state.getValue(FACING);
+			EnumFacing facing = state.getValue(FACING);
 
 			if (facing == EnumFacing.NORTH && northState.isFullBlock()
 					&& !southState.isFullBlock()) {
@@ -57,7 +56,8 @@ public class BrickFurnace extends MachineBase {
 				facing = EnumFacing.WEST;
 			}
 
-			worldIn.setBlockState(pos, state.withProperty(FACING, facing).withProperty(RUNNING, false), 2);
+			worldIn.setBlockState(pos, state.withProperty(FACING, facing)
+					.withProperty(TEMPERATURE, 0), 2);
 		}
 	}
 
@@ -65,19 +65,21 @@ public class BrickFurnace extends MachineBase {
 	 * Called by ItemBlocks after a block is set in the world, to allow
 	 * post-place logic
 	 */
+	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state,
 			EntityLivingBase placer, ItemStack stack) {
 		worldIn.setBlockState(pos, state.withProperty(FACING, placer
 				.getHorizontalFacing().getOpposite()), 2);
 	}
 
+	@Override
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 		{
 			TileEntity tileentity = worldIn.getTileEntity(pos);
 
-			if (tileentity instanceof GeneratorCoalLogic) {
+			if (tileentity instanceof BrickFurnaceLogic) {
 				InventoryHelper.dropInventoryItems(worldIn, pos,
-						(GeneratorCoalLogic) tileentity);
+						(BrickFurnaceLogic) tileentity);
 			}
 		}
 
@@ -87,24 +89,25 @@ public class BrickFurnace extends MachineBase {
 	/**
 	 * Convert the given metadata into a BlockState for this Block
 	 */
+	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		EnumFacing enumfacing = EnumFacing.getFront(meta);
+		EnumFacing enumfacing = EnumFacing.getHorizontal(meta);
 
 		if (enumfacing.getAxis() == EnumFacing.Axis.Y) {
 			enumfacing = EnumFacing.NORTH;
 		}
 
-		return this.getDefaultState().withProperty(FACING, enumfacing).withProperty(RUNNING, meta <= 8);
+		return getDefaultState().withProperty(FACING, enumfacing).withProperty(
+				TEMPERATURE, meta >> 2);
 	}
 
 	/**
 	 * Convert the BlockState into the correct metadata value
 	 */
+	@Override
 	public int getMetaFromState(IBlockState state) {
-		int meta = ((EnumFacing) state.getValue(FACING)).getIndex();
-		if(state.getValue(RUNNING)) {
-			meta += 8;
-		}
+		int meta = state.getValue(FACING).getHorizontalIndex();
+		meta = meta | state.getValue(TEMPERATURE) << 2;
 		return meta;
 	}
 
@@ -112,22 +115,24 @@ public class BrickFurnace extends MachineBase {
 	 * Returns the blockstate with the given rotation from the passed
 	 * blockstate. If inapplicable, returns the passed blockstate.
 	 */
+	@Override
 	public IBlockState withRotation(IBlockState state, Rotation rot) {
-		return state.withProperty(FACING,
-				rot.rotate((EnumFacing) state.getValue(FACING)));
+		return state.withProperty(FACING, rot.rotate(state.getValue(FACING)));
 	}
 
 	/**
 	 * Returns the blockstate with the given mirror of the passed blockstate. If
 	 * inapplicable, returns the passed blockstate.
 	 */
+	@Override
 	public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
-		return state.withRotation(mirrorIn.toRotation((EnumFacing) state
-				.getValue(FACING)));
+		return state.withRotation(mirrorIn.toRotation(state.getValue(FACING)));
 	}
 
+	@Override
 	protected BlockStateContainer createBlockState() {
-		return (new BlockStateContainer.Builder(this)).add(FACING).add(RUNNING).build();
+		return (new BlockStateContainer.Builder(this)).add(FACING)
+				.add(TEMPERATURE).build();
 	}
 
 	@Override
@@ -137,8 +142,7 @@ public class BrickFurnace extends MachineBase {
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		// TODO Auto-generated method stub
-		return null;
+		return new BrickFurnaceLogic();
 	}
 
 	@Override
