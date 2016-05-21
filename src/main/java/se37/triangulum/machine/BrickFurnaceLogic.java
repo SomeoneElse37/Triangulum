@@ -162,7 +162,7 @@ public class BrickFurnaceLogic extends MachineLogicBase implements
 				if (progress > ENERGY_PER_SMELT) {
 					progress -= ENERGY_PER_SMELT;
 					ItemStack result = FurnaceRecipes.instance()
-							.getSmeltingResult(inv[0]);
+							.getSmeltingResult(inv[0]).copy();
 					if (inv[1] == null) {
 						inv[1] = result;
 					} else {
@@ -206,7 +206,7 @@ public class BrickFurnaceLogic extends MachineLogicBase implements
 			return false;
 		} else {
 			ItemStack itemstack = FurnaceRecipes.instance().getSmeltingResult(
-					inv[0]);
+					inv[0]).copy();
 			if (itemstack == null)
 				return false;
 			if (inv[1] == null)
